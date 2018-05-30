@@ -16,19 +16,13 @@ using System.Windows.Shapes;
 namespace WpfApp1
 {
     /// <summary>
-    /// ManEmp_add.xaml 的交互逻辑
+    /// Manage_Emp.xaml 的交互逻辑
     /// </summary>
-    public partial class ManEmp_add : Page
+    public partial class Manage_Emp : Page
     {
-        Frame frame;
-        public ManEmp_add()
+        public Manage_Emp()
         {
             InitializeComponent();
-        }
-        public ManEmp_add(Frame frame)
-        {
-            InitializeComponent();
-            this.frame = frame;
         }
     }
 }

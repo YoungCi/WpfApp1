@@ -84,43 +84,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ManCargo.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ManCargo_sale.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ManCargo_toadd.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ManEmp.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ManEmp_add.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ManEmp_alter.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ManEmp_del.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ManEmp_find.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ManEmp_salary.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ManOrder.xaml">
+    <Page Include="Manage_Emp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -129,35 +93,8 @@
     <Compile Include="Manager.xaml.cs">
       <DependentUpon>Manager.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ManCargo.xaml.cs">
-      <DependentUpon>ManCargo.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ManCargo_sale.xaml.cs">
-      <DependentUpon>ManCargo_sale.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ManCargo_toadd.xaml.cs">
-      <DependentUpon>ManCargo_toadd.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ManEmp.xaml.cs">
-      <DependentUpon>ManEmp.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ManEmp_add.xaml.cs">
-      <DependentUpon>ManEmp_add.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ManEmp_alter.xaml.cs">
-      <DependentUpon>ManEmp_alter.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ManEmp_del.xaml.cs">
-      <DependentUpon>ManEmp_del.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ManEmp_find.xaml.cs">
-      <DependentUpon>ManEmp_find.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ManEmp_salary.xaml.cs">
-      <DependentUpon>ManEmp_salary.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ManOrder.xaml.cs">
-      <DependentUpon>ManOrder.xaml</DependentUpon>
+    <Compile Include="Manage_Emp.xaml.cs">
+      <DependentUpon>Manage_Emp.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
