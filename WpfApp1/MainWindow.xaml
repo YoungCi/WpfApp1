@@ -20,7 +20,7 @@
             <RowDefinition Height = "28"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <DockPanel Grid.Row="0" 
+        <DockPanel Grid.Row="0"
                        VerticalAlignment="Center" Background="#55AAAa">
             <DockPanel.Resources>
                 <Style TargetType="Button" x:Key="abb" >
