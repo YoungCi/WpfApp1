@@ -45,5 +45,10 @@ namespace WpfApp1
             Console.WriteLine("222");
             Environment.Exit(0);
         }
+
+        private void DragAction(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
     }
 }
