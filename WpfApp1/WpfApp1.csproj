@@ -100,26 +100,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ManEmp_add.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ManEmp_alter.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ManEmp_del.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ManEmp_find.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ManEmp_salary.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="ManOrder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -140,21 +120,6 @@
     </Compile>
     <Compile Include="ManEmp.xaml.cs">
       <DependentUpon>ManEmp.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ManEmp_add.xaml.cs">
-      <DependentUpon>ManEmp_add.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ManEmp_alter.xaml.cs">
-      <DependentUpon>ManEmp_alter.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ManEmp_del.xaml.cs">
-      <DependentUpon>ManEmp_del.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ManEmp_find.xaml.cs">
-      <DependentUpon>ManEmp_find.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ManEmp_salary.xaml.cs">
-      <DependentUpon>ManEmp_salary.xaml</DependentUpon>
     </Compile>
     <Compile Include="ManOrder.xaml.cs">
       <DependentUpon>ManOrder.xaml</DependentUpon>
@@ -195,6 +160,11 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="img\icons8-presentation-64.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\icons8-no-entry-40.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>

@@ -28,32 +28,6 @@ namespace WpfApp1
         public ManEmp(Frame frame)
         {
             InitializeComponent();
-            this.frame = frame;
-        }
-
-        private void ManEmp_add(object sender, RoutedEventArgs e)
-        {
-            frame.Content = new ManEmp_add(frame);
-        }
-
-        private void ManEmp_del(object sender, RoutedEventArgs e)
-        {
-            frame.Content = new ManEmp_del(frame);
-        }
-
-        private void ManEmp_find(object sender, RoutedEventArgs e)
-        {
-            frame.Content = new ManEmp_find(frame);
-        }
-
-        private void ManEmp_alter(object sender, RoutedEventArgs e)
-        {
-            frame.Content = new ManEmp_alter(frame);
-        }
-
-        private void ManEmp_salary(object sender, RoutedEventArgs e)
-        {
-            frame.Content = new ManEmp_salary(frame);
         }
     }
 }

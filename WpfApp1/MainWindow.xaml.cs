@@ -42,13 +42,17 @@ namespace WpfApp1
 
         private void exit(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("222");
             Environment.Exit(0);
         }
 
         private void DragAction(object sender, MouseButtonEventArgs e)
         {
             DragMove();
+        }
+
+        private void min(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
         }
     }
 }

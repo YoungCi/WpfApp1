@@ -7,19 +7,14 @@
         mc:Ignorable="d"
         WindowStyle="None"
         Title="小型销售管理系统" Height="450" Width="800"
-       ResizeMode="NoResize">
+        ResizeMode="NoResize">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="289*"/>
-            <ColumnDefinition Width="111*"/>
-        </Grid.ColumnDefinitions>
-
         <Grid.RowDefinitions>
             <RowDefinition Height = "40"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <DockPanel Grid.Row="0" MouseDown="DragAction"
-                       VerticalAlignment="Top" Background="#55AAAa" Margin="0,-30,0,0" Grid.ColumnSpan="2">
+                       VerticalAlignment="Top" Background="#55AAAa" Grid.ColumnSpan="2">
             <DockPanel.Resources>
                 <Style TargetType="Button" x:Key="abb" >
                     <Setter Property="Margin" Value="0,0,5,0"></Setter>
@@ -29,14 +24,16 @@
                 </Style>
                 <Image x:Key="arrow-left"  Source="img\icons8-arrow-left-64.png"></Image>
                 <Image x:Key="delete"  Source="img\icons8-delete-64.png"></Image>
+                <Image x:Key="min"  Source="img\icons8-no-entry-40.png"></Image>
             </DockPanel.Resources>
             <Label Content="小型销售管理系统" Foreground="White" DockPanel.Dock="Left" Height="30" FontSize="15
                    " FontWeight="Bold"/>
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Button Content="{StaticResource min}" Click="min" Style="{StaticResource abb}"/>
                 <Button Content="{StaticResource arrow-left}" Click="goBack"  Style="{StaticResource abb}"/>
                 <Button Content="{StaticResource delete}" Click="exit" Style="{StaticResource abb}"/>
             </StackPanel>
         </DockPanel>
-        <Frame Name="frame" Visibility="Hidden" NavigationUIVisibility="Hidden" Grid.Row="1" Grid.ColumnSpan="2"></Frame>
+        <Frame Name="frame" NavigationUIVisibility="Hidden" Grid.Row="1" Grid.ColumnSpan="2"></Frame>
     </Grid>
 </Window>

@@ -9,18 +9,6 @@
       Title="ManEmp">
 
     <Grid Background="White">
-        <Grid.Resources>
-            <Style TargetType="Button" x:Key="man_style">
-                <Setter Property="FontSize" Value="25"></Setter>
-                <Setter Property="Width" Value="240"></Setter>
-                <Setter Property="Height" Value="50"></Setter>
-            </Style>
-        </Grid.Resources>
-        <Label Content="管理员工信息"  HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="34" Margin="271,20,267,0"/>
-        <Button Content="增加员工信息" Click="ManEmp_add" Style="{StaticResource man_style}" Margin="125,150,435,0"  VerticalAlignment="Top" />
-        <Button Content="删除员工信息" Click="ManEmp_del" Style="{StaticResource man_style}" Margin="435,150,125,0" VerticalAlignment="Top" />
-        <Button Content="查找员工信息" Click="ManEmp_find"  Style="{StaticResource man_style}" Margin="125,232,435,0" VerticalAlignment="Top"/>
-        <Button Content="修改员工信息" Click="ManEmp_alter"  Style="{StaticResource man_style}" Margin="435,232,125,0" VerticalAlignment="Top"/>
-        <Button Content="查询员工提成及工资" Click="ManEmp_salary" Style="{StaticResource man_style}" HorizontalAlignment="Center" Margin="0 260 0 0"/>
+        
     </Grid>
 </Page>
