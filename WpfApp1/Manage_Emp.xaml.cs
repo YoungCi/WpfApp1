@@ -1,5 +1,7 @@
-﻿using System;
+﻿using DataGridDemo;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,10 +23,20 @@ namespace WpfApp1
     public partial class Manage_Emp : Page
     {
         Frame frame;
+        ObservableCollection<EmpObj> list = new ObservableCollection<EmpObj>();
         public Manage_Emp(Frame frame)
         {
             InitializeComponent();
             this.frame = frame;
+            Emp_DataGrid.ItemsSource = list;
+            list.Add(new EmpObj("C00001", "叶加博", Sex.男, 22, -100));
+            list.Add(new EmpObj("C00002", "杨思旖", Sex.女, 21, 100));
+           
+        }
+
+        private void AddEmp(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

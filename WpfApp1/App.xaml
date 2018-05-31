@@ -4,6 +4,14 @@
              xmlns:local="clr-namespace:WpfApp1"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        <Style TargetType="DataGrid" x:Key="CommonDataGrid">
+            <Setter Property="MinColumnWidth" Value="75"></Setter>
+            <Setter Property="AutoGenerateColumns" Value="True"></Setter>
+            <Setter Property="IsReadOnly" Value="True"></Setter>
+            <Setter Property="SelectionMode" Value="Single"></Setter>
+            <Setter Property="Margin" Value="30,0,30,0"></Setter>
+
+        </Style>
         <Style TargetType="{x:Type Button}" x:Key="HoverWarning">
             <Setter Property="Background" Value="PaleVioletRed">
             </Setter>

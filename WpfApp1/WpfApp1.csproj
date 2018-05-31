@@ -76,6 +76,7 @@
     <Compile Include="index.xaml.cs">
       <DependentUpon>index.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ItemObj.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -88,6 +89,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MyDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Manager.xaml.cs">
@@ -95,6 +100,9 @@
     </Compile>
     <Compile Include="Manage_Emp.xaml.cs">
       <DependentUpon>Manage_Emp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MyDialog.xaml.cs">
+      <DependentUpon>MyDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
