@@ -6,21 +6,27 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         WindowStyle="None"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         Title="小型销售管理系统" Height="450" Width="800"
-        ResizeMode="NoResize">
+       ResizeMode="NoResize">
+    <Window.Resources>
+        <sys:Double x:Key="controlBtnSize">30</sys:Double>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height = "40"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
         <DockPanel Grid.Row="0" MouseDown="DragAction"
-                       VerticalAlignment="Top" Background="#55AAAa" Grid.ColumnSpan="2">
+                       VerticalAlignment="Top" Background="#55AAAa">
             <DockPanel.Resources>
+                
                 <Style TargetType="Button" x:Key="abb" >
                     <Setter Property="Margin" Value="0,0,5,0"></Setter>
                     <Setter Property="Background" Value="#8db6cd"></Setter>
                     <Setter Property="BorderThickness" Value="0"></Setter>
-                    <Setter Property="Width" Value="20"></Setter>
+                    <Setter Property="Width" Value="{StaticResource controlBtnSize}"></Setter>
+                    <Setter Property="Height" Value="{StaticResource controlBtnSize}"></Setter>
                 </Style>
                 <Image x:Key="arrow-left"  Source="img\icons8-arrow-left-64.png"></Image>
                 <Image x:Key="delete"  Source="img\icons8-delete-64.png"></Image>
@@ -36,6 +42,6 @@
                 <Button Content="{StaticResource delete}" Click="exit" Margin="5 0 0 0"  Style="{StaticResource abb}"/>
             </StackPanel>
         </DockPanel>
-        <Frame Name="frame" NavigationUIVisibility="Hidden" Grid.Row="1" Grid.ColumnSpan="2"></Frame>
+        <Frame Name="frame"  NavigationUIVisibility="Hidden" Grid.Row="1"> </Frame>
     </Grid>
 </Window>

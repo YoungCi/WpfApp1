@@ -33,12 +33,11 @@ namespace WpfApp1
 
         private void ManEmp(object sender, RoutedEventArgs e)
         {
-            frame.Content = new ManEmp(frame);
+            
         }
 
         private void ManCrago(object sender, RoutedEventArgs e)
         {
-            frame.Content = new ManCargo(frame);
         }
     }
 }
