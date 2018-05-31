@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="index">
-    <Grid Background="White">
+    <Grid  Background="Wheat">
         <Grid.Resources>
             <Style TargetType="Button" x:Key="man_style">
                 <Setter Property="FontSize" Value="25"></Setter>
@@ -25,8 +25,8 @@
             </StackPanel>
         </Grid.Resources>
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*"></RowDefinition>
-            <RowDefinition Height="3*"></RowDefinition>
+            <RowDefinition Height="20*"></RowDefinition>
+            <RowDefinition Height="30*"></RowDefinition>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Vertical" Margin="0,60,0,0" >
             <Label Content="欢迎来到小型销售部门管理系统" HorizontalAlignment="Center" FontSize="30"  VerticalAlignment="Center" FontWeight="Bold" />
