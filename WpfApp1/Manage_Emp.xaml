@@ -11,24 +11,34 @@
     <Grid Background="White">
         <Grid.RowDefinitions>
             <RowDefinition ></RowDefinition>
-            <RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
         </Grid.RowDefinitions>
         <DataGrid Grid.Row="0">
             
         </DataGrid>
-        <StackPanel Grid.Row="1" Orientation="Horizontal">
-            <StackPanel.Resources>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="450"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.Resources>
                 <Style TargetType="Button">
-                    <Setter Property="Width" Value="60"></Setter>
+                    <Setter Property="Width" Value="100"></Setter>
                     <Setter Property="Height" Value="30"></Setter>
                     <Setter Property="Margin" Value="10,10,10,10"></Setter>
                 </Style>
-            </StackPanel.Resources>
-            <TextBox Width="100" Height="30"></TextBox>
-            <Button></Button>
-            <Button></Button>
-            <Button></Button>
+            </Grid.Resources>
+            
+            <StackPanel Grid.Column="0" Orientation="Horizontal">
+                <ComboBox Name="QuerySelectBox" Width="150" Height="30" VerticalContentAlignment="Center" Margin="30,0,10,0" SelectedIndex="0" >
+                    <ComboBoxItem Content="按员工号查询" ></ComboBoxItem>
+                    <ComboBoxItem Content="按员工姓名模糊查询"></ComboBoxItem>
+                </ComboBox>
+                <TextBox Width="120" Height="30" VerticalContentAlignment="Center" TextWrapping="NoWrap"></TextBox>
+                <Button Content="条件查询"></Button>
+            </StackPanel>
+            <Button Style="{StaticResource HoverWarning}" Height="30" HorizontalAlignment="Right" Grid.Column="1"  Width="180" Margin="0,0,30,0" Content="移除销售记录为空的员工"></Button>
 
-        </StackPanel>
+        </Grid>
     </Grid>
 </Page>

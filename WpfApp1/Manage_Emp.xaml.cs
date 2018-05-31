@@ -20,9 +20,11 @@ namespace WpfApp1
     /// </summary>
     public partial class Manage_Emp : Page
     {
-        public Manage_Emp()
+        Frame frame;
+        public Manage_Emp(Frame frame)
         {
             InitializeComponent();
+            this.frame = frame;
         }
     }
 }
