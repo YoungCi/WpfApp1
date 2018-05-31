@@ -54,6 +54,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="sql.cs" />
     <Page Include="Employee.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -84,45 +85,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ManCargo.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Manage_Emp.xaml">
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ManCargo_sale.xaml">
       <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ManCargo_toadd.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ManEmp.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ManOrder.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Manager.xaml.cs">
       <DependentUpon>Manager.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ManCargo.xaml.cs">
-      <DependentUpon>ManCargo.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ManCargo_sale.xaml.cs">
-      <DependentUpon>ManCargo_sale.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ManCargo_toadd.xaml.cs">
-      <DependentUpon>ManCargo_toadd.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ManEmp.xaml.cs">
-      <DependentUpon>ManEmp.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ManOrder.xaml.cs">
-      <DependentUpon>ManOrder.xaml</DependentUpon>
+    <Compile Include="Manage_Emp.xaml.cs">
+      <DependentUpon>Manage_Emp.xaml</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -141,6 +116,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="img\POS Terminal-512px.zip">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
