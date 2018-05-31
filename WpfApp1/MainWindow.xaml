@@ -25,13 +25,15 @@
                 <Image x:Key="arrow-left"  Source="img\icons8-arrow-left-64.png"></Image>
                 <Image x:Key="delete"  Source="img\icons8-delete-64.png"></Image>
                 <Image x:Key="min"  Source="img\icons8-no-entry-40.png"></Image>
+                <Image x:Key="home"  Source="img\icons8-home-page-80.png"></Image>
             </DockPanel.Resources>
             <Label Content="小型销售管理系统" Foreground="White" DockPanel.Dock="Left" Height="30" FontSize="15
                    " FontWeight="Bold"/>
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" HorizontalAlignment="Right" VerticalAlignment="Center">
-                <Button Content="{StaticResource min}" Click="min" Style="{StaticResource abb}"/>
-                <Button Content="{StaticResource arrow-left}" Click="goBack"  Style="{StaticResource abb}"/>
-                <Button Content="{StaticResource delete}" Click="exit" Style="{StaticResource abb}"/>
+                <Button Content="{StaticResource home}" Click="home" Style="{StaticResource abb}"/>
+                <Button Content="{StaticResource arrow-left}" Click="goBack" Style="{StaticResource abb}"/>
+                <Button Content="{StaticResource min}" Click="min" Margin="7 0 0 0" Style="{StaticResource abb}"/>
+                <Button Content="{StaticResource delete}" Click="exit" Margin="5 0 0 0"  Style="{StaticResource abb}"/>
             </StackPanel>
         </DockPanel>
         <Frame Name="frame" NavigationUIVisibility="Hidden" Grid.Row="1" Grid.ColumnSpan="2"></Frame>

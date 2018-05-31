@@ -9,6 +9,12 @@
       Title="ManEmp">
 
     <Grid Background="White">
-        
+        <Grid.Resources>
+            <Image x:Key="pencil"  Source="img\icons8-pencil-80.png"></Image>
+            <Image x:Key="plus"  Source="img\icons8-plus-80.png"></Image>
+            <Image x:Key="cancle"  Source="img\icons8-cancle-64.png"></Image>
+            <Image x:Key="checkmark"  Source="img\icons8-checkmark-64.png"></Image>
+            
+        </Grid.Resources>
     </Grid>
 </Page>

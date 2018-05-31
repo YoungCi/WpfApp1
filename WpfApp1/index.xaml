@@ -7,7 +7,6 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="index">
-
     <Grid Background="White">
         <Grid.Resources>
             <Style TargetType="Button" x:Key="man_style">
@@ -16,10 +15,36 @@
                 <Setter Property="Width" Value="240"></Setter>
                 <Setter Property="Height" Value="50"></Setter>
             </Style>
+            <StackPanel x:Key="businessman" Orientation="Horizontal">
+                <Image Source="img/icons8-businessman-80.png" Height="30"></Image>
+                <Label Content="账号：" VerticalAlignment="Center" FontSize="25"></Label>
+            </StackPanel>
+            <StackPanel x:Key="password" Orientation="Horizontal">
+                <Image Source="img/icons8-password-1-80.png" Height="30"></Image>
+                <Label Content="密码：" VerticalAlignment="Center" FontSize="25"></Label>
+            </StackPanel>
         </Grid.Resources>
-        <Label Content="欢迎来到小型销售部门管理系统" HorizontalAlignment="Center" FontSize="30" Margin="0,80,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Button Content="部门主管界面" Style="{StaticResource man_style}" Click="Manager"  Margin="0,180,0,0" VerticalAlignment="Top"/>
-        <Button Content="部门职员界面" Style="{StaticResource man_style}" Click="Employee" Margin="0,260,0,0" VerticalAlignment="Top"/>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Vertical" Margin="0,60,0,0" >
+            <Label Content="欢迎来到小型销售部门管理系统" HorizontalAlignment="Center" FontSize="30"  VerticalAlignment="Center" FontWeight="Bold" />
+            <Label Content="请先登录：" HorizontalAlignment="Center"  FontSize="25" VerticalAlignment="Center" FontWeight="Black" Margin="0,20,0,0"/>
+        </StackPanel>
+        <Grid Grid.Row="1" Height="100" Width="400">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Grid.Row="0" Content="{StaticResource businessman}" HorizontalAlignment="Right" VerticalAlignment="Center" ></Label>
+            <Label Grid.Column="0" Grid.Row="1" Content="{StaticResource password}" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
+            <TextBox Grid.Column="1" Grid.Row="0" Height="40" Width="200" HorizontalAlignment="Left" Text="" VerticalAlignment="Center" BorderThickness="2"/>
+            <PasswordBox Grid.Column="1" Grid.Row="1"  Height="40" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center" BorderThickness="2"/>
+        </Grid>
     </Grid>
 </Page>

@@ -25,15 +25,8 @@ namespace WpfApp1
             InitializeComponent();
             frame.Content = new index(frame);
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void goBack(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("***");
             if (frame.CanGoBack)
             {
                 frame.GoBack();
@@ -53,6 +46,12 @@ namespace WpfApp1
         private void min(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
+        }
+
+        private void home(object sender, RoutedEventArgs e)
+        {
+            frame.RemoveBackEntry();
+            frame.Content = new index(frame);
         }
     }
 }
