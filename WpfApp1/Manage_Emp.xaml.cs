@@ -33,7 +33,18 @@ namespace WpfApp1
             list.Add(new EmpObj("C00002", "杨思旖", Sex.女, 21, 100));
            
         }
-
+        private void EditAction(object sender, RoutedEventArgs e)
+        {
+            var index = Emp_DataGrid.SelectedIndex;
+            Console.WriteLine(list[index]);
+            MyDialog dialog = new MyDialog(list[index],false);
+            dialog.ShowDialog();
+            Console.WriteLine(dialog.DialogResult);
+            if(dialog.DialogResult==true)
+            {
+                list[index] = dialog.getObjResult() as EmpObj;
+            }
+        }
         private void AddEmp(object sender, RoutedEventArgs e)
         {
 

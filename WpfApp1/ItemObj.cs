@@ -28,7 +28,7 @@ namespace DataGridDemo
     }
     public enum Sex { 男,女}
     [Serializable]
-    public class EmpObj
+    public class EmpObj:ItemObj
     {
         private string id;
         private string name;

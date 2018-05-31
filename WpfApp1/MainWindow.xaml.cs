@@ -23,7 +23,6 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-            frame.Content = new index(frame);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
