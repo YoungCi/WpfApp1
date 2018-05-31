@@ -85,7 +85,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Manage_Emp.xaml">
+    <Page Include="ManCargo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManCargo_sale.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManCargo_toadd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManEmp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ManOrder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -98,8 +114,20 @@
     <Compile Include="Manager.xaml.cs">
       <DependentUpon>Manager.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Manage_Emp.xaml.cs">
-      <DependentUpon>Manage_Emp.xaml</DependentUpon>
+    <Compile Include="ManCargo.xaml.cs">
+      <DependentUpon>ManCargo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManCargo_sale.xaml.cs">
+      <DependentUpon>ManCargo_sale.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManCargo_toadd.xaml.cs">
+      <DependentUpon>ManCargo_toadd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManEmp.xaml.cs">
+      <DependentUpon>ManEmp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ManOrder.xaml.cs">
+      <DependentUpon>ManOrder.xaml</DependentUpon>
     </Compile>
     <Compile Include="MyDialog.xaml.cs">
       <DependentUpon>MyDialog.xaml</DependentUpon>
@@ -140,6 +168,46 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="img\icons8-presentation-64.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\icons8-no-entry-40.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\icons8-home-page-80.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\icons8-password-1-80.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\icons8-pencil-80.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\icons8-plus-80.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\icons8-add-administrator-filled-100.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\icons8-businessman-80.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\icons8-cancel-64.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
