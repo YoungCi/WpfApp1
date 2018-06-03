@@ -8,10 +8,10 @@ using System.Data;
 
 namespace WpfApp1
 {
-    class sql
+    class Sql
     {
         private SqlConnection connection;
-        public sql()
+        public Sql()
         {
             initSqlConnection();
         }

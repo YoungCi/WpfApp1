@@ -51,6 +51,10 @@ namespace DataGridDemo
         {
             return content[0];
         }
+        public dynamic getObjectList()
+        {
+            return content;
+        }
         private void Submit(object sender, RoutedEventArgs e)
         {
             

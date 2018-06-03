@@ -18,7 +18,9 @@
                   CanUserAddRows="True" MinColumnWidth="75"
                   IsReadOnly="False" SelectionMode="Single" 
                   SelectionUnit="Cell" Grid.Row="0"
-                  AutoGeneratingColumn="OnDataGridAutoGeneratingColumn">
+                  AutoGeneratingColumn="OnDataGridAutoGeneratingColumn"
+                  MinRowHeight="30"
+                    >
             <DataGrid.Columns>
             </DataGrid.Columns>
         </DataGrid>

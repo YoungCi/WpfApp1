@@ -60,15 +60,15 @@
                     <ComboBoxItem Content="按员工号查询" ></ComboBoxItem>
                     <ComboBoxItem Content="按员工姓名模糊查询"></ComboBoxItem>
                 </ComboBox>
-                <TextBox Width="120" Height="30" VerticalContentAlignment="Center" TextWrapping="NoWrap"></TextBox>
-                <Button Content="条件查询" Width="60"></Button>
+                <TextBox Width="120" Name="find" Height="30" VerticalContentAlignment="Center" TextWrapping="NoWrap"></TextBox>
+                <Button Content="条件查询" Width="60" Click="find_emp"></Button>
             </StackPanel>
             <DockPanel Grid.Column="1">
                 <Button Content="{StaticResource add-administrator}" Width="90" Click="AddEmp"></Button>
             </DockPanel>
             <DockPanel Grid.Column="2">
                 <Button Content="删除选择员工" Click="Del_Selected" Margin="12 0 0 0" DockPanel.Dock="Left"  Style="{StaticResource HoverWarning}" Height="30"  Width="90"></Button>
-                <Button Content="移除销售记录为空的员工" Margin="0 0 25 0" DockPanel.Dock="Right"  Style="{StaticResource HoverWarning}" Height="30"  Width="160"></Button>
+                <Button Content="移除销售记录为空的员工" Click="ManEmp_del_bad"  Margin="0 0 25 0" DockPanel.Dock="Right"  Style="{StaticResource HoverWarning}" Height="30"  Width="160"></Button>
             </DockPanel>
         </Grid>
     </Grid>
