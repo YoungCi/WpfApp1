@@ -32,6 +32,7 @@ namespace WpfApp1
             InitializeComponent();
             this.frame = frame;
             Emp_DataGrid.ItemsSource = list;
+            resetList();
         }
         private void EditAction(object sender, RoutedEventArgs e)
         {
@@ -42,7 +43,20 @@ namespace WpfApp1
             Console.WriteLine(dialog.DialogResult);
             if(dialog.DialogResult==true)
             {
-                list[index] = dialog.getObjResult() as EmpObj;
+                //list[index] = dialog.getObjResult() as EmpObj;
+                var item = dialog.getObjResult() as EmpObj;
+                var key = list[index].工号;
+                if (item.工号!=key)
+                {
+                    helper.ManEmp_alter(key, 8, item.工号, 0);
+                    key = item.工号;
+                }
+                    helper.ManEmp_alter(key, 1, item.姓名, 0);
+                    helper.ManEmp_alter(key, 2, item.性别.ToString(), 0);
+                    helper.ManEmp_alter(key, 3, item.年龄.ToString(), 1);
+                    helper.ManEmp_alter(key, 5, item.基本工资.ToString(), 1);
+                    helper.ManEmp_alter(key, 7, ((int)item.用户类型).ToString(), 1);
+                resetList();
             }
         }
         private void resetPasswordAction(object sender, RoutedEventArgs e)
@@ -54,7 +68,7 @@ namespace WpfApp1
             if(rep.DialogResult==true)
             {
                 String hashPassword = rep.GetHashPassword();
-                //插入
+                helper.ManEmp_alter(idKey, 6, hashPassword, 0);
             }
         }
         private void AddEmp(object sender, RoutedEventArgs e)
@@ -69,6 +83,10 @@ namespace WpfApp1
                 {
                     resetList();
                     return;
+                }
+                else
+                {
+                    MessageBox.Show("您增加的数据中包含不符合规则的值！");
                 }
             }
         }
