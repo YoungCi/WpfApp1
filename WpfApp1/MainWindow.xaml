@@ -44,6 +44,6 @@
                 <Button Content="{StaticResource delete}" Click="exit" Margin="5 0 0 0"  Style="{StaticResource abb}"/>
             </StackPanel>
         </DockPanel>
-        <Frame Name="frame"  NavigationUIVisibility="Hidden" Grid.Row="1"> </Frame>
+        <Frame Name="frame"   NavigationUIVisibility="Hidden" Grid.Row="1"> </Frame>
     </Grid>
 </Window>
