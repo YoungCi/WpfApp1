@@ -44,9 +44,13 @@
         </Image>
         <Label Content="添加员工"></Label>
         </StackPanel>
-        <StackPanel x:Key="delete" Orientation="Horizontal">
+        <StackPanel x:Key="delete_emp" Orientation="Horizontal">
             <Image  Source="img/icons8-checkmark-64.png" Height="20" Width="20"></Image>
             <Label Content="选择员工"></Label>
+        </StackPanel>
+        <StackPanel x:Key="delete_chargo" Orientation="Horizontal">
+            <Image  Source="img/icons8-checkmark-64.png" Height="20" Width="20"></Image>
+            <Label Content="选择货物"></Label>
         </StackPanel>
     </Application.Resources>
 </Application>
