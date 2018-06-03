@@ -132,7 +132,14 @@ namespace WpfApp1
             foreach (var r in rows)
             {
                 Sex sex = (r["sex"].ToString().Trim() == "男" ? Sex.男 : Sex.女);
-                list.Add(new EmpObj(r["emp_no"].ToString().Trim(), r["emp_name"].ToString().Trim(), sex, Int32.Parse(r["age"].ToString().Trim()), Double.Parse(r["bas_salary"].ToString().Trim())));
+                UserType type = (Int32.Parse(r["property"].ToString().Trim()) == 0 ? UserType.管理员 : UserType.员工);
+                list.Add(new EmpObj(r["emp_no"].ToString().Trim(),
+                                    r["emp_name"].ToString().Trim(),
+                                    sex,
+                                    Int32.Parse(r["age"].ToString().Trim()),
+                                    Double.Parse(r["bas_salary"].ToString().Trim()),
+                                    type
+                                    ));
             }
         }
         private void resetList()
