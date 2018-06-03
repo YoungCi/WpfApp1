@@ -16,28 +16,19 @@ using System.Windows.Shapes;
 namespace WpfApp1
 {
     /// <summary>
-    /// Employee.xaml 的交互逻辑
+    /// Emp_order.xaml 的交互逻辑
     /// </summary>
-    public partial class Employee : Page
+    public partial class Emp_order : Page
     {
         Frame frame;
-        public Employee()
+        public Emp_order()
         {
             InitializeComponent();
         }
-        public Employee(Frame frame)
+        public Emp_order(Frame frame)
         {
             InitializeComponent();
             this.frame = frame;
-        }
-
-        private void Emp_order(object sender, RoutedEventArgs e)
-        {
-            public Employee(Frame frame)
-            {
-                InitializeComponent();
-                this.frame = frame;
-            }
         }
     }
 }

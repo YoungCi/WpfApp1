@@ -54,6 +54,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Emp_order.xaml.cs">
+      <DependentUpon>Emp_order.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Manager_cargo.xaml.cs">
       <DependentUpon>Manager_cargo.xaml</DependentUpon>
     </Compile>
@@ -63,6 +66,10 @@
     </Compile>
     <Compile Include="sql.cs" />
     <Page Include="Employee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Emp_order.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

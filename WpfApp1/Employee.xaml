@@ -19,7 +19,7 @@
         </Grid.Resources>
         <Label Content="部门职员界面"   VerticalAlignment="Top" FontSize="36" Margin="271,49,267,0"/>
         <Button Content="货物管理" Style="{StaticResource man_style}" Margin="0,160,0,0"  VerticalAlignment="Top" />
-        <Button Content="订单管理" Style="{StaticResource man_style}" Margin="0,230,0,0" VerticalAlignment="Top" />
+        <Button Content="订单管理" Style="{StaticResource man_style}" Click="Emp_order" Margin="0,230,0,0" VerticalAlignment="Top" />
         <Button Content="添加客户" Style="{StaticResource man_style}" Margin="0,300,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Page>
