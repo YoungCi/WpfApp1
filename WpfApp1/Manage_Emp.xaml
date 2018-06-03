@@ -13,27 +13,27 @@
             <RowDefinition ></RowDefinition>
             <RowDefinition Height="60"></RowDefinition>
         </Grid.RowDefinitions>
-        <DataGrid Grid.Row="0" Name="Emp_DataGrid" IsReadOnly="True" Style="{StaticResource CommonDataGrid}">
-            <DataGrid.RowStyle>
-                <Style  TargetType="DataGridRow">
-                    <EventSetter Event="PreviewMouseDown" Handler="Item_GotFocus"/>
-                </Style>
-            </DataGrid.RowStyle>
+        <DataGrid Grid.Row="0" Name="Emp_DataGrid" IsReadOnly="True" Style="{StaticResource CommonDataGrid}" AutoGeneratingColumn="OnDataGridAutoGeneratingColumn">
+           
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="操作">
-                    
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                                <Button ContentTemplate="{StaticResource pencil}" Click="EditAction"></Button>
+                            <Button ContentTemplate="{StaticResource pencil}" Click="EditAction"></Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridCheckBoxColumn IsReadOnly="False" Binding="{Binding Check}">
-                    <DataGridCheckBoxColumn.Header>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.Header>
                         <Label Content="{StaticResource delete}"></Label>
-                </DataGridCheckBoxColumn.Header>
-                    
-                </DataGridCheckBoxColumn>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox HorizontalAlignment="Center" VerticalAlignment="Center"  IsChecked="{  Binding Check,
+                                                    Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
         <Grid Grid.Row="1">

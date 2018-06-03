@@ -17,7 +17,7 @@ namespace DataGridDemo
             Check = false;
         }
 
-        public bool Check { get => check; set => check = value; }
+        public bool Check { get; set; }
 
         public object Clone()
         {
@@ -60,5 +60,4 @@ namespace DataGridDemo
             基本工资 = baseSaray;
         }
     }
-
 }

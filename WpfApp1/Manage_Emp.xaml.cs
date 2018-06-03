@@ -53,28 +53,44 @@ namespace WpfApp1
         {
 
         }
-
+        private void OnDataGridAutoGeneratingColumn(
+            object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            Console.WriteLine(e.PropertyName);
+            if(e.PropertyName=="Check")
+            {
+                e.Cancel = true;
+            }
+            
+        }
         private void Item_GotFocus(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("aaa");
+            /*
             var item = (DataGridRow)sender;
             FrameworkElement objElement = Emp_DataGrid.Columns[1].GetCellContent(item);
-            if (objElement != null)
+            var box=VisualTreeHelper.GetChild(objElement, 0) as CheckBox;
+            if (box != null)
             {
-                CheckBox objChk = (CheckBox)objElement;
-                objChk.IsChecked = !objChk.IsChecked;
+                box.IsChecked = !box.IsChecked;
+                
             }
+            */
 
         }
-
         private void Del_Selected(object sender, RoutedEventArgs e)
         {
+            List<EmpObj> delList = new List<EmpObj>();
             foreach(var item in list)
             {
-                if(item.Check)
+                if(item.Check==true)
                 {
-                    Console.WriteLine(item);
+                    delList.Add(item);
                 }
+            }
+            Console.WriteLine(delList.Count());
+            foreach(var item in delList)
+            {
+                list.Remove(item);
             }
         }
     }
