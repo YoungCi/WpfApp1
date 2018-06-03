@@ -13,14 +13,24 @@
             <RowDefinition ></RowDefinition>
             <RowDefinition Height="60"></RowDefinition>
         </Grid.RowDefinitions>
-        <DataGrid Grid.Row="0" Name="Emp_DataGrid" Style="{StaticResource CommonDataGrid}">
+        <DataGrid Grid.Row="0" Name="Emp_DataGrid" IsReadOnly="True" Style="{StaticResource CommonDataGrid}" AutoGeneratingColumn="OnDataGridAutoGeneratingColumn">
+           
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="操作">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Horizontal">
-                                <Button Content="修改" Click="EditAction"></Button>
-                            </StackPanel>
+                            <Button ContentTemplate="{StaticResource pencil}" Click="EditAction"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.Header>
+                        <Label Content="{StaticResource delete}"></Label>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox HorizontalAlignment="Center" VerticalAlignment="Center"  IsChecked="{  Binding Check,
+                                                    Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -28,7 +38,8 @@
         </DataGrid>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="450"></ColumnDefinition>
+                <ColumnDefinition Width="390"></ColumnDefinition>
+                <ColumnDefinition Width="110"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Grid.Resources>
@@ -45,13 +56,15 @@
                     <ComboBoxItem Content="按员工姓名模糊查询"></ComboBoxItem>
                 </ComboBox>
                 <TextBox Width="120" Height="30" VerticalContentAlignment="Center" TextWrapping="NoWrap"></TextBox>
-                <Button Content="条件查询"></Button>
+                <Button Content="条件查询" Width="60"></Button>
             </StackPanel>
             <DockPanel Grid.Column="1">
-                <Button Content="添加员工" DockPanel.Dock="Left" Click="AddEmp"></Button>
-                <Button Content="移除销售记录为空的员工" DockPanel.Dock="Right"  Style="{StaticResource HoverWarning}" Height="30"  Width="180"></Button>
+                <Button Content="{StaticResource add-administrator}" Width="90" Click="AddEmp"></Button>
             </DockPanel>
-            
+            <DockPanel Grid.Column="2">
+                <Button Content="删除选择员工" Click="Del_Selected" Margin="12 0 0 0" DockPanel.Dock="Left"  Style="{StaticResource HoverWarning}" Height="30"  Width="90"></Button>
+                <Button Content="移除销售记录为空的员工" Margin="0 0 25 0" DockPanel.Dock="Right"  Style="{StaticResource HoverWarning}" Height="30"  Width="160"></Button>
+            </DockPanel>
         </Grid>
     </Grid>
 </Page>

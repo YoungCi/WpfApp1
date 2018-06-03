@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data;
 
 namespace WpfApp1
 {
@@ -28,15 +29,41 @@ namespace WpfApp1
             this.frame = frame;
             
         }
-
-        private void Manager(object sender, RoutedEventArgs e)
+        private void login(object sender, RoutedEventArgs e)
         {
-            frame.Content = new Manager(frame);
-        }
-
-        private void Employee(object sender, RoutedEventArgs e)
-        {
-            frame.Content = new Employee(frame);
+            sql helper;
+            helper = new sql();
+            string username = usernameText.Text.Trim();
+            string password = passwordText.Password.Trim();
+            DataRow[] d= helper.check_in(username);
+            if (d.Count() == 0)
+            {
+                checkErrorLabel.Visibility = Visibility.Visible;
+                checkErrorLabel.Content = "登录名不存在！请重新输入！";
+                return;
+            }
+            string pa=null;
+            int p=1121212;
+            foreach(var v in d)
+             {
+                pa = v["passward"].ToString().Trim();
+                p = (int)v["property"];
+            }
+            if (md5helper.check(password, pa) == false)
+            {
+                checkErrorLabel.Visibility = Visibility.Visible;
+                checkErrorLabel.Content = "用户密码错误！请重新输入！";
+                return;
+            }
+            checkErrorLabel.Visibility = Visibility.Hidden;
+            if (p == 0)
+            {
+                frame.Content = new Employee(frame);
+            }
+            else if (p == 1)
+            {
+                frame.Content = new Manager(frame);
+            }
         }
     }
 }

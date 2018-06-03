@@ -11,6 +11,14 @@ namespace DataGridDemo
     [Serializable]
     public class ItemObj:ICloneable
     {
+        private bool check;
+        public ItemObj()
+        {
+            Check = false;
+        }
+
+        public bool Check { get; set; }
+
         public object Clone()
         {
             using (MemoryStream stream = new MemoryStream())
@@ -52,5 +60,4 @@ namespace DataGridDemo
             基本工资 = baseSaray;
         }
     }
-
 }

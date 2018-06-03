@@ -36,6 +36,10 @@ namespace WpfApp1
         private void EditAction(object sender, RoutedEventArgs e)
         {
             var index = Emp_DataGrid.SelectedIndex;
+            DataGridRow rowContainer = (DataGridRow)Emp_DataGrid.ItemContainerGenerator.ContainerFromIndex(index);
+
+            var box = Emp_DataGrid.Columns[1].GetCellContent(rowContainer) as CheckBox;
+            box.IsChecked = !box.IsChecked;
             Console.WriteLine(list[index]);
             MyDialog dialog = new MyDialog(list[index],false);
             dialog.ShowDialog();
@@ -48,6 +52,46 @@ namespace WpfApp1
         private void AddEmp(object sender, RoutedEventArgs e)
         {
 
+        }
+        private void OnDataGridAutoGeneratingColumn(
+            object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            Console.WriteLine(e.PropertyName);
+            if(e.PropertyName=="Check")
+            {
+                e.Cancel = true;
+            }
+            
+        }
+        private void Item_GotFocus(object sender, RoutedEventArgs e)
+        {
+            /*
+            var item = (DataGridRow)sender;
+            FrameworkElement objElement = Emp_DataGrid.Columns[1].GetCellContent(item);
+            var box=VisualTreeHelper.GetChild(objElement, 0) as CheckBox;
+            if (box != null)
+            {
+                box.IsChecked = !box.IsChecked;
+                
+            }
+            */
+
+        }
+        private void Del_Selected(object sender, RoutedEventArgs e)
+        {
+            List<EmpObj> delList = new List<EmpObj>();
+            foreach(var item in list)
+            {
+                if(item.Check==true)
+                {
+                    delList.Add(item);
+                }
+            }
+            Console.WriteLine(delList.Count());
+            foreach(var item in delList)
+            {
+                list.Remove(item);
+            }
         }
     }
 }

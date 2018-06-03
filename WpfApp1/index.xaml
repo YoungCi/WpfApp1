@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="index">
-    <Grid  Background="Wheat">
+    <Grid  Background="#FFBDE2C0">
         <Grid.Resources>
             <Style TargetType="Button" x:Key="man_style">
                 <Setter Property="FontSize" Value="25"></Setter>
@@ -25,14 +25,16 @@
             </StackPanel>
         </Grid.Resources>
         <Grid.RowDefinitions>
-            <RowDefinition Height="25*"></RowDefinition>
-            <RowDefinition Height="30*"></RowDefinition>
+            <RowDefinition Height="34*"></RowDefinition>
+            <RowDefinition Height="35*"></RowDefinition>
+            <RowDefinition Height="7*"></RowDefinition>
+            <RowDefinition Height="11*"></RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" Orientation="Vertical" VerticalAlignment="Bottom">
+        <StackPanel Grid.Row="0" Orientation="Vertical" Margin="0,60,0,0" >
             <Label Content="欢迎来到小型销售部门管理系统" HorizontalAlignment="Center" FontSize="30"  VerticalAlignment="Center" FontWeight="Bold" />
             <Label Content="请先登录：" HorizontalAlignment="Center"  FontSize="25" VerticalAlignment="Center" FontWeight="Black" Margin="0,20,0,0"/>
         </StackPanel>
-        <Grid Grid.Row="1" Height="100" Width="400" Margin="0,40,0,0" VerticalAlignment="Top">
+        <Grid Grid.Row="1" Height="100" Width="400">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"></RowDefinition>
                 <RowDefinition Height="1*"></RowDefinition>
@@ -43,8 +45,20 @@
             </Grid.ColumnDefinitions>
             <Label Grid.Column="0" Grid.Row="0" Content="{StaticResource businessman}" HorizontalAlignment="Right" VerticalAlignment="Center" ></Label>
             <Label Grid.Column="0" Grid.Row="1" Content="{StaticResource password}" HorizontalAlignment="Right" VerticalAlignment="Center"></Label>
-            <TextBox Grid.Column="1" Grid.Row="0" Height="40" Width="200" HorizontalAlignment="Left" Text="" VerticalAlignment="Center" BorderThickness="2"/>
-            <PasswordBox Grid.Column="1" Grid.Row="1"  Height="40" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center" BorderThickness="2"/>
+            <TextBox Grid.Column="1" Name="usernameText" FontSize="25" Grid.Row="0" Height="40" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center" BorderThickness="2"/>
+            <PasswordBox Grid.Column="1" Name="passwordText" FontSize="25" Grid.Row="1"  Height="40" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center" BorderThickness="2"/>
+        </Grid>
+        <Grid Grid.Row="2" Height="100" Width="400">
+            <Button Content="登录" Click="login" HorizontalAlignment="Center" VerticalAlignment="Top" BorderThickness="2" Background="White" Height="30" Width="
+                80"></Button>
+        </Grid>
+        <Grid Grid.Row="4" Height="100" Width="400">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="309*"/>
+                <ColumnDefinition Width="92*"/>
+            </Grid.ColumnDefinitions>
+            <Label Name="checkErrorLabel" Visibility="Hidden"
+                   FontSize="16" VerticalAlignment="Top" HorizontalContentAlignment="Center" BorderThickness="0" Background="#FFBDE2C0" Height="35" FontFamily="Viner Hand ITC" Grid.ColumnSpan="2" />
         </Grid>
     </Grid>
 </Page>

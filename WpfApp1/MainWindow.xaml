@@ -28,11 +28,13 @@
                     <Setter Property="Width" Value="{StaticResource controlBtnSize}"></Setter>
                     <Setter Property="Height" Value="{StaticResource controlBtnSize}"></Setter>
                 </Style>
+                <Image x:Key="POS Terminal"  Source="img\icons8-pos-terminal-64.png"></Image>
                 <Image x:Key="arrow-left"  Source="img\icons8-arrow-left-64.png"></Image>
                 <Image x:Key="delete"  Source="img\icons8-delete-64.png"></Image>
                 <Image x:Key="min"  Source="img\icons8-no-entry-40.png"></Image>
                 <Image x:Key="home"  Source="img\icons8-home-page-80.png"></Image>
             </DockPanel.Resources>
+            <Label Content="{StaticResource POS Terminal}" DockPanel.Dock="Left" Height="40" Width="40"/>
             <Label Content="小型销售管理系统" Foreground="White" DockPanel.Dock="Left" Height="30" FontSize="15
                    " FontWeight="Bold"/>
             <StackPanel Orientation="Horizontal" DockPanel.Dock="Right" HorizontalAlignment="Right" VerticalAlignment="Center">
