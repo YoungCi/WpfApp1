@@ -29,8 +29,8 @@ namespace WpfApp1
         }
         private void login(object sender, RoutedEventArgs e)
         {
-            sql helper;
-            helper = new sql();
+            Sql helper;
+            helper = new Sql();
             string username = usernameText.Text.Trim();
             string password = passwordText.Password.Trim();
             DataRow[] d= helper.check_in(username);

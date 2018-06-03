@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,24 +23,20 @@ namespace WpfApp1
     /// </summary>
     public partial class Manage_Emp : Page
     {
+        Sql helper = new Sql(); 
         Frame frame;
         ObservableCollection<EmpObj> list = new ObservableCollection<EmpObj>();
         public Manage_Emp(Frame frame)
         {
+
             InitializeComponent();
             this.frame = frame;
             Emp_DataGrid.ItemsSource = list;
-            list.Add(new EmpObj("C00001", "叶加博", Sex.男, 22, -100));
-            list.Add(new EmpObj("C00002", "杨思旖", Sex.女, 21, 100));
-           
+            resetList();
         }
         private void EditAction(object sender, RoutedEventArgs e)
         {
             var index = Emp_DataGrid.SelectedIndex;
-            DataGridRow rowContainer = (DataGridRow)Emp_DataGrid.ItemContainerGenerator.ContainerFromIndex(index);
-
-            var box = Emp_DataGrid.Columns[1].GetCellContent(rowContainer) as CheckBox;
-            box.IsChecked = !box.IsChecked;
             Console.WriteLine(list[index]);
             MyDialog dialog = new MyDialog(list[index],false);
             dialog.ShowDialog();
@@ -51,7 +48,18 @@ namespace WpfApp1
         }
         private void AddEmp(object sender, RoutedEventArgs e)
         {
-
+            MyDialog dialog = new MyDialog(typeof(EmpObj));
+            dialog.ShowDialog();
+            ObservableCollection<EmpObj> newList = dialog.getObjectList();
+            foreach(var item in newList)
+            {
+                int operatorCode = helper.ManEmp_add(item.工号.Trim(), item.姓名.Trim(), item.性别.ToString(), item.年龄.ToString(), item.基本工资.ToString(), md5helper.encrypt("123456"),0);
+                if (operatorCode == 0)
+                {
+                    resetList();
+                    return;
+                }
+            }
         }
         private void OnDataGridAutoGeneratingColumn(
             object sender, DataGridAutoGeneratingColumnEventArgs e)
@@ -92,6 +100,40 @@ namespace WpfApp1
             {
                 list.Remove(item);
             }
+        }
+
+        private void find_emp(object sender, RoutedEventArgs e)
+        {
+            if(QuerySelectBox.SelectedIndex == 0)
+            {
+                var rows = helper.find_id("Employee","emp_no", find.Text.Trim());
+                resetList(rows);
+            }
+            else if(QuerySelectBox.SelectedIndex == 1)
+            {
+                var rows = helper.find_name("Employee", "emp_name", find.Text.Trim());
+                resetList(rows);
+            }
+        }
+        private void resetList(DataRow[] rows)
+        {
+            list.Clear();
+            foreach (var r in rows)
+            {
+                Sex sex = (r["sex"].ToString().Trim() == "男" ? Sex.男 : Sex.女);
+                list.Add(new EmpObj(r["emp_no"].ToString().Trim(), r["emp_name"].ToString().Trim(), sex, Int32.Parse(r["age"].ToString().Trim()), Double.Parse(r["bas_salary"].ToString().Trim())));
+            }
+        }
+        private void resetList()
+        {
+            var rows = helper.find_all("Employee");
+            resetList(rows);
+        }
+
+        private void ManEmp_del_bad(object sender, RoutedEventArgs e)
+        {
+            helper.ManEmp_del_bad();
+            resetList();
         }
     }
 }

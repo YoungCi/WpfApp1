@@ -18,6 +18,7 @@
                   CanUserAddRows="False" MinColumnWidth="75"
                   IsReadOnly="False" SelectionMode="Single" 
                   SelectionUnit="Cell" Grid.Row="0"
+                  MinRowHeight="30"
                     >
             <DataGrid.Columns>
             </DataGrid.Columns>
