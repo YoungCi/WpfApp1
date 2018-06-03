@@ -9,7 +9,7 @@
             <Setter Property="AutoGenerateColumns" Value="True"></Setter>
             <Setter Property="IsReadOnly" Value="True"></Setter>
             <Setter Property="SelectionMode" Value="Single"></Setter>
-            <Setter Property="Margin" Value="30,0,30,0"></Setter>
+            <Setter Property="Margin" Value="30,30,30,0"></Setter>
 
         </Style>
         <Style TargetType="{x:Type Button}" x:Key="HoverWarning">
@@ -33,5 +33,20 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+        <DataTemplate x:Key="pencil">
+        <StackPanel Orientation="Horizontal">
+            <Image  Source="img/icons8-pencil-80.png" Height="20" Width="20"></Image>
+            <Label Content="编辑"></Label>
+        </StackPanel>
+        </DataTemplate>
+        <StackPanel x:Key="add-administrator" Orientation="Horizontal">
+                <Image Source="img/icons8-add-administrator-filled-100.png" Height="20" Width="20">
+        </Image>
+        <Label Content="添加员工"></Label>
+        </StackPanel>
+        <StackPanel x:Key="delete" Orientation="Horizontal">
+            <Image  Source="img/icons8-checkmark-64.png" Height="20" Width="20"></Image>
+            <Label Content="选择员工"></Label>
+        </StackPanel>
     </Application.Resources>
 </Application>
