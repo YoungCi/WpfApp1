@@ -36,6 +36,10 @@ namespace WpfApp1
         private void EditAction(object sender, RoutedEventArgs e)
         {
             var index = Emp_DataGrid.SelectedIndex;
+            DataGridRow rowContainer = (DataGridRow)Emp_DataGrid.ItemContainerGenerator.ContainerFromIndex(index);
+
+            var box = Emp_DataGrid.Columns[1].GetCellContent(rowContainer) as CheckBox;
+            box.IsChecked = !box.IsChecked;
             Console.WriteLine(list[index]);
             MyDialog dialog = new MyDialog(list[index],false);
             dialog.ShowDialog();
@@ -48,6 +52,30 @@ namespace WpfApp1
         private void AddEmp(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Item_GotFocus(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("aaa");
+            var item = (DataGridRow)sender;
+            FrameworkElement objElement = Emp_DataGrid.Columns[1].GetCellContent(item);
+            if (objElement != null)
+            {
+                CheckBox objChk = (CheckBox)objElement;
+                objChk.IsChecked = !objChk.IsChecked;
+            }
+
+        }
+
+        private void Del_Selected(object sender, RoutedEventArgs e)
+        {
+            foreach(var item in list)
+            {
+                if(item.Check)
+                {
+                    Console.WriteLine(item);
+                }
+            }
         }
     }
 }

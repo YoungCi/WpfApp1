@@ -11,6 +11,14 @@ namespace DataGridDemo
     [Serializable]
     public class ItemObj:ICloneable
     {
+        private bool check;
+        public ItemObj()
+        {
+            Check = false;
+        }
+
+        public bool Check { get => check; set => check = value; }
+
         public object Clone()
         {
             using (MemoryStream stream = new MemoryStream())

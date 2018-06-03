@@ -29,10 +29,16 @@ namespace WpfApp1
         }
 
         //增加
-        public int ManEmp_add(string id, string name, string sex, string age, string bas_salary)
+        public int ManEmp_add(string id, string name, string sex, string age, string bas_salary, string password, int porperty)
         {
-            String insertSql = String.Format("INSERT INTO employee VALUES ('{0}', '{1}','{2}',{3},{4})", id, name, sex, age, bas_salary);
+            //String insertSql = String.Format("INSERT INTO employee VALUES ('{0}', '{1}','{2}',{3},{4},'{password}',{porperty})", id, name, sex, age, bas_salary);写错了
+            String insertSql = $"INSERT INTO employee VALUES ('{id}', '{name}','{sex}',{age},{bas_salary},'{password}',{porperty})";
             return ExecuteNonQuery(insertSql);
+        }
+        public DataRow[] check_in(string id)
+        {
+            String checkSql = String.Format("select passward,property from employee where emp_no = '{0}'", id);
+            return ExecutQuery(checkSql);
         }
         public int Cargo_add(string cargo_no, string name, string pur_price, string sale_price, string inventory)
         {
