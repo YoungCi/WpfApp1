@@ -55,6 +55,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="md5helper.cs" />
+    <Compile Include="RePasswordDialog.xaml.cs">
+      <DependentUpon>RePasswordDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="sql.cs" />
     <Page Include="Employee.xaml">
       <SubType>Designer</SubType>
@@ -94,6 +97,10 @@
     <Page Include="MyDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RePasswordDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
