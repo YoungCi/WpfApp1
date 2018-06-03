@@ -13,14 +13,19 @@
             <RowDefinition ></RowDefinition>
             <RowDefinition Height="60"></RowDefinition>
         </Grid.RowDefinitions>
-        <DataGrid Grid.Row="0" Name="Emp_DataGrid" IsReadOnly="True" Style="{StaticResource CommonDataGrid}" AutoGeneratingColumn="OnDataGridAutoGeneratingColumn">
+        <DataGrid Grid.Row="0" Name="Emp_DataGrid" IsReadOnly="True" 
+                  Style="{StaticResource CommonDataGrid}" 
+                  AutoGeneratingColumn="OnDataGridAutoGeneratingColumn">
            
             <DataGrid.Columns>
                 <DataGridTemplateColumn Header="操作">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button ContentTemplate="{StaticResource pencil}" Click="EditAction"></Button>
-                        </DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button ContentTemplate="{StaticResource pencil}" Click="EditAction"></Button>
+                                <Button Content="修改密码" Click="resetPasswordAction"></Button>
+                            </StackPanel>
+                            </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
                 <DataGridTemplateColumn>

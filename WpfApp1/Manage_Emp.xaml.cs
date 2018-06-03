@@ -1,4 +1,4 @@
-﻿using DataGridDemo;
+using DataGridDemo;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -32,7 +32,6 @@ namespace WpfApp1
             InitializeComponent();
             this.frame = frame;
             Emp_DataGrid.ItemsSource = list;
-            resetList();
         }
         private void EditAction(object sender, RoutedEventArgs e)
         {
@@ -44,6 +43,18 @@ namespace WpfApp1
             if(dialog.DialogResult==true)
             {
                 list[index] = dialog.getObjResult() as EmpObj;
+            }
+        }
+        private void resetPasswordAction(object sender, RoutedEventArgs e)
+        {
+            var index = Emp_DataGrid.SelectedIndex;
+            String idKey = list[index].工号;
+            RePasswordDialog rep = new RePasswordDialog();
+            rep.ShowDialog();
+            if(rep.DialogResult==true)
+            {
+                String hashPassword = rep.GetHashPassword();
+                //插入
             }
         }
         private void AddEmp(object sender, RoutedEventArgs e)

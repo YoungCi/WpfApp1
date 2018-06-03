@@ -25,23 +25,18 @@ namespace DataGridDemo
         public MyDialog(ItemObj item,bool isAddable)
         {
             InitializeComponent();
-            if(isAddable)
+            if(!isAddable)
             {
-                data.CanUserAddRows = true;
-            }
-            else
-            {
+                data.CanUserAddRows = false;
                 Height = 150;
             }
             initList(item.GetType());
             dynamic trueItem = item.Clone();
             content.Add(trueItem);
-            
         }
         public MyDialog(Type type)
         {
             InitializeComponent();
-            data.CanUserAddRows = true;
             initList(type);
         }
         private void initList(Type type)
@@ -69,6 +64,15 @@ namespace DataGridDemo
         private void Cancel(object sender, RoutedEventArgs e)
         {
             DialogResult = false;
+        }
+        private void OnDataGridAutoGeneratingColumn(
+            object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            Console.WriteLine(e.PropertyName);
+            if (e.PropertyName == "Check")
+            {
+                e.Cancel = true;
+            }
         }
     }
 }
