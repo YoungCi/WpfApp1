@@ -29,6 +29,13 @@ namespace WpfApp1
             this.frame = frame;
             
         }
+
+        void PageLoaded(object sender, RoutedEventArgs e)
+        {
+            Keyboard.Focus(usernameText);
+            while (frame.CanGoBack)
+                frame.RemoveBackEntry();
+        }
         private void login(object sender, RoutedEventArgs e)
         {
             Sql helper;

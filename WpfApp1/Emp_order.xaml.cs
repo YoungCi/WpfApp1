@@ -58,7 +58,7 @@ namespace WpfApp1
         {
             var index = Order_DataGrid.SelectedIndex;
             Console.WriteLine(list[index]);
-            MyDialog dialog = new MyDialog(list[index], false);
+            MyDialog dialog = new MyDialog(list[index], false,"修改订单信息");
             dialog.ShowDialog();
             Console.WriteLine(dialog.DialogResult);
             if (dialog.DialogResult == true)
@@ -81,8 +81,7 @@ namespace WpfApp1
 
         private void add_order(object sender, RoutedEventArgs e)
         {
-            MyDialog dialog = new MyDialog(typeof(
-                OrderObj));
+            MyDialog dialog = new MyDialog(typeof(OrderObj),"添加订单信息");
             dialog.ShowDialog();
             ObservableCollection<OrderObj> newList = dialog.getObjectList();
             foreach (var item in newList)
