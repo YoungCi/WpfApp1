@@ -53,6 +53,7 @@
             </StackPanel>
             <Button Grid.Column="2" Content="查询" Width="40" Height="30" VerticalAlignment="Center" Click="ManCargo_find"></Button>
         </Grid>
+        
         <DataGrid Grid.Row="1" Name="data" IsReadOnly="True" 
               Style="{StaticResource CommonDataGrid}" Margin="30,10,30,10" 
              AutoGeneratingColumn="OnDataGridAutoGeneratingColumn">
