@@ -36,7 +36,7 @@ namespace WpfApp1
             frame.Content = new Manage_Emp(frame);
         }
 
-        private void ManCrago(object sender, RoutedEventArgs e)
+        private void Manager_cargo(object sender, RoutedEventArgs e)
         {
             frame.Content = new Manager_cargo(frame);
         }

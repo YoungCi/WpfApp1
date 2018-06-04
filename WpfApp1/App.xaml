@@ -49,9 +49,13 @@
         </Image>
         <Label Content="添加员工"></Label>
         </StackPanel>
-        <StackPanel x:Key="add" Orientation="Horizontal">
+        <StackPanel x:Key="add_sale" Orientation="Horizontal">
             <Image Source="img/icons8-plus-80.png" Height="20" Width="20"></Image>
             <Label Content="添加订单"></Label>
+        </StackPanel>
+        <StackPanel x:Key="add_cargo" Orientation="Horizontal">
+            <Image Source="img/icons8-plus-80.png" Height="20" Width="20"></Image>
+            <Label Content="添加货物"></Label>
         </StackPanel>
         <StackPanel x:Key="delete_emp" Orientation="Horizontal">
             <Image  Source="img/icons8-checkmark-64.png" Height="20" Width="20"></Image>

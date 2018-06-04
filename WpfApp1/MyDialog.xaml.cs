@@ -85,7 +85,8 @@ namespace DataGridDemo
             {
                 if (e.PropertyName == "工号" ||
                    e.PropertyName == "货物号" ||
-                   e.PropertyName == "订单号")
+                   e.PropertyName == "订单号"||
+                   e.PropertyName == "客户号")
                     e.Cancel = true;
             }
         }

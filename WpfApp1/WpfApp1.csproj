@@ -54,6 +54,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddCustomer.xaml.cs">
+      <DependentUpon>AddCustomer.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Employee_Chargo.xaml.cs">
       <DependentUpon>Employee_Chargo.xaml</DependentUpon>
     </Compile>
@@ -71,6 +74,10 @@
       <DependentUpon>RePasswordDialog.xaml</DependentUpon>
     </Compile>
     <Compile Include="sql.cs" />
+    <Page Include="AddCustomer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Employee.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
