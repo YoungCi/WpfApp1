@@ -35,7 +35,7 @@ namespace DataGridDemo
         }
     }
     public enum Sex { 男,女}
-    public enum UserType { 管理员,员工}
+    public enum UserType { 员工,管理员 }
     [Serializable]
     public class EmpObj:ItemObj
     {
@@ -64,6 +64,29 @@ namespace DataGridDemo
         }
     }
     [Serializable]
+    public class CarObj:ItemObj
+    {
+        String id;
+        String name;
+        Double pur_price;
+        Double sale_price;
+        int inventory;
+
+        public string 货物号 { get => id; set => id = value; }
+        public string 名称 { get => name; set => name = value; }
+        public double 进价 { get => pur_price; set => pur_price = value; }
+        public double 售价 { get => sale_price; set => sale_price = value; }
+        public int 库存量 { get => inventory; set => inventory = value; }
+        public CarObj() { }
+        public CarObj(string id,string name,double pur_price,double sale_price,int inventory)
+        {
+            货物号 = id;
+            名称 = name;
+            进价 = pur_price;
+            售价 = sale_price;
+            库存量 = inventory;
+        }
+    }
     public class OrderObj:ItemObj
     {
         private string sale_no;

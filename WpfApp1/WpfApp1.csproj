@@ -54,11 +54,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Employee_Chargo.xaml.cs">
+      <DependentUpon>Employee_Chargo.xaml</DependentUpon>
     <Compile Include="Emp_order.xaml.cs">
       <DependentUpon>Emp_order.xaml</DependentUpon>
     </Compile>
     <Compile Include="Manager_cargo.xaml.cs">
       <DependentUpon>Manager_cargo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Manage_sale.xaml.cs">
+      <DependentUpon>Manage_sale.xaml</DependentUpon>
     </Compile>
     <Compile Include="md5helper.cs" />
     <Compile Include="RePasswordDialog.xaml.cs">
@@ -69,6 +74,9 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Employee_Chargo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     <Page Include="Emp_order.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -107,6 +115,10 @@
     <Page Include="Manage_Emp.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Manage_sale.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MyDialog.xaml">
       <Generator>MSBuild:Compile</Generator>
