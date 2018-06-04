@@ -52,5 +52,14 @@ namespace WpfApp1
         {
             frame.Content = new index(frame);
         }
+        public static String MakeErrorString(List<String> list)
+        {
+            StringBuilder builder = new StringBuilder();
+            foreach(var i in list)
+            {
+                builder.AppendLine(i);
+            }
+            return builder.ToString();
+        }
     }
 }
