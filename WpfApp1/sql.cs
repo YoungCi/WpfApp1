@@ -134,13 +134,13 @@ namespace WpfApp1
         }
 
         //修改 ty==0 string else int
-        public void ManEmp_alter(string id, int Ch, string edit, int ty)
+        public int ManEmp_alter(string id, int Ch, string edit, int ty)
         {
             if (ty == 0)
                 edit = $"'{edit}'";
             String[] na = new string[] { "emp_name", "sex", "age", "tot_amt", "bas_salary","passward","property","emp_no" };
             String alterSql = $"UPDATE employee SET {na[Ch - 1]} = {edit} WHERE emp_no = '{id}'";
-            ExecuteNonQuery(alterSql);
+            return ExecuteNonQuery(alterSql);
         }
         public void Cargo_alter(string id, int Ch, string edit, int ty)
         {

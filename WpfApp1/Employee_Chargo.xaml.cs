@@ -89,7 +89,7 @@ namespace WpfApp1
 
         private void AddChargo(object sender, RoutedEventArgs e)
         {
-            MyDialog dialog = new MyDialog(typeof(CarObj));
+            MyDialog dialog = new MyDialog(typeof(CarObj),"添加货物信息");
             dialog.ShowDialog();
             ObservableCollection<CarObj> newList = dialog.getObjectList();
             foreach (var item in newList)
@@ -106,7 +106,7 @@ namespace WpfApp1
         {
             var index = Chargo_DataGrid.SelectedIndex;
             Console.WriteLine(list[index]);
-            MyDialog dialog = new MyDialog(list[index], false);
+            MyDialog dialog = new MyDialog(list[index], false,"修改货物信息");
             dialog.ShowDialog();
             Console.WriteLine(dialog.DialogResult);
             if (dialog.DialogResult == true)

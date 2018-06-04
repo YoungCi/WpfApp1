@@ -38,7 +38,7 @@ namespace WpfApp1
         {
             var index = Emp_DataGrid.SelectedIndex;
             Console.WriteLine(list[index]);
-            MyDialog dialog = new MyDialog(list[index],false);
+            MyDialog dialog = new MyDialog(list[index],false,"修改员工信息");
             dialog.ShowDialog();
             Console.WriteLine(dialog.DialogResult);
             if(dialog.DialogResult==true)
@@ -46,9 +46,11 @@ namespace WpfApp1
                 //list[index] = dialog.getObjResult() as EmpObj;
                 var item = dialog.getObjResult() as EmpObj;
                 var key = list[index].工号;
+                int operatorCode;
                 if (item.工号!=key)
                 {
-                    helper.ManEmp_alter(key, 8, item.工号, 0);
+                    operatorCode=helper.ManEmp_alter(key, 8, item.工号, 0);
+                    if (operatorCode != 0) return;
                     key = item.工号;
                 }
                     helper.ManEmp_alter(key, 1, item.姓名, 0);
@@ -73,7 +75,7 @@ namespace WpfApp1
         }
         private void AddEmp(object sender, RoutedEventArgs e)
         {
-            MyDialog dialog = new MyDialog(typeof(EmpObj));
+            MyDialog dialog = new MyDialog(typeof(EmpObj),"添加员工信息");
             dialog.ShowDialog();
             ObservableCollection<EmpObj> newList = dialog.getObjectList();
             foreach(var item in newList)

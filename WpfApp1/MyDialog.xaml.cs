@@ -22,7 +22,8 @@ namespace DataGridDemo
     public partial class MyDialog : Window
     {
         dynamic content;
-        public MyDialog(ItemObj item,bool isAddable)
+        bool canShowId=false;
+        public MyDialog(ItemObj item,bool isAddable,String title)
         {
             InitializeComponent();
             if(!isAddable)
@@ -33,11 +34,18 @@ namespace DataGridDemo
             initList(item.GetType());
             dynamic trueItem = item.Clone();
             content.Add(trueItem);
+            SetTitle(title);
         }
-        public MyDialog(Type type)
+        public MyDialog(Type type,String title)
         {
             InitializeComponent();
             initList(type);
+            canShowId = true;
+            SetTitle(title);
+        }
+        private void SetTitle(String title)
+        {
+            Title = title;
         }
         private void initList(Type type)
         {
@@ -72,6 +80,13 @@ namespace DataGridDemo
             if (e.PropertyName == "Check")
             {
                 e.Cancel = true;
+            }
+            if(canShowId==false)
+            {
+                if (e.PropertyName == "工号" ||
+                   e.PropertyName == "货物号" ||
+                   e.PropertyName == "订单号")
+                    e.Cancel = true;
             }
         }
     }
