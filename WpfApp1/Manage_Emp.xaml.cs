@@ -119,16 +119,10 @@ namespace WpfApp1
             List<EmpObj> delList = new List<EmpObj>();
             foreach(var item in list)
             {
-                if(item.Check==true)
-                {
-                    delList.Add(item);
-                }
+                if(item.Check)
+                    helper.del_no("employee", "emp_no", item.工号);
             }
-            Console.WriteLine(delList.Count());
-            foreach(var item in delList)
-            {
-                list.Remove(item);
-            }
+            resetList();
         }
 
         private void find_emp(object sender, RoutedEventArgs e)
@@ -150,7 +144,7 @@ namespace WpfApp1
             foreach (var r in rows)
             {
                 Sex sex = (r["sex"].ToString().Trim() == "男" ? Sex.男 : Sex.女);
-                UserType type = (Int32.Parse(r["property"].ToString().Trim()) == 0 ? UserType.管理员 : UserType.员工);
+                UserType type = (Int32.Parse(r["property"].ToString().Trim()) == 1 ? UserType.管理员 : UserType.员工);
                 list.Add(new EmpObj(r["emp_no"].ToString().Trim(),
                                     r["emp_name"].ToString().Trim(),
                                     sex,

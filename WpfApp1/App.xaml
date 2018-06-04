@@ -52,5 +52,12 @@
             <Image  Source="img/icons8-checkmark-64.png" Height="20" Width="20"></Image>
             <Label Content="选择货物"></Label>
         </StackPanel>
+        <Style TargetType="Button" x:Key="user_button">
+            <Setter Property="FontSize" Value="25"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="Width" Value="240"></Setter>
+            <Setter Property="Height" Value="50"></Setter>
+            <Setter Property="Margin" Value="0,20,0,0"></Setter>
+        </Style>
     </Application.Resources>
 </Application>

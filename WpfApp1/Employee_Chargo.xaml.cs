@@ -31,6 +31,7 @@ namespace WpfApp1
             InitializeComponent();
             this.frame = frame;
             Chargo_DataGrid.ItemsSource = list;
+            resetList();
         }
         private void OnDataGridAutoGeneratingColumn(
             object sender, DataGridAutoGeneratingColumnEventArgs e)
@@ -47,12 +48,12 @@ namespace WpfApp1
         {
             if (QuerySelectBox.SelectedIndex == 0)
             {
-                var rows = helper.find_id("cargo", "cargo_no", find.Text.Trim());
+                var rows = helper.find_id("cargo", "car_no", find.Text.Trim());
                 resetList(rows);
             }
             else if (QuerySelectBox.SelectedIndex == 1)
             {
-                var rows = helper.find_name("cargo", "cargo_name", find.Text.Trim());
+                var rows = helper.find_name("cargo", "car_name", find.Text.Trim());
                 resetList(rows);
             }
         }
@@ -63,13 +64,10 @@ namespace WpfApp1
             {
                 if (item.Check == true)
                 {
-                    delList.Add(item);
+                    helper.del_no("cargo", "car_no", item.货物号);
                 }
             }
-            foreach (var item in delList)
-            {
-                list.Remove(item);
-            }
+            resetList();
         }
         private void resetList(DataRow[] rows)
         {
@@ -102,6 +100,30 @@ namespace WpfApp1
                     resetList();
                     return;
                 }
+            }
+        }
+        private void EditAction(object sender, RoutedEventArgs e)
+        {
+            var index = Chargo_DataGrid.SelectedIndex;
+            Console.WriteLine(list[index]);
+            MyDialog dialog = new MyDialog(list[index], false);
+            dialog.ShowDialog();
+            Console.WriteLine(dialog.DialogResult);
+            if (dialog.DialogResult == true)
+            {
+                //list[index] = dialog.getObjResult() as EmpObj;
+                var item = dialog.getObjResult() as CarObj;
+                var key = list[index].货物号;
+                if (item.货物号 != key)
+                {
+                    helper.Cargo_alter(key, 6, item.货物号, 0);
+                    key = item.货物号;
+                }
+                helper.Cargo_alter(key, 1, item.名称, 0);
+                helper.Cargo_alter(key, 2, item.进价.ToString(), 1);
+                helper.Cargo_alter(key, 3, item.售价.ToString(), 1);
+                helper.Cargo_alter(key, 5, item.库存量.ToString(), 1);
+                resetList();
             }
         }
     }

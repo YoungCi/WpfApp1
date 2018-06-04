@@ -44,7 +44,7 @@ namespace WpfApp1
             switch (QuerySelectBox.SelectedIndex)
             {
                 case 0:
-                    rows = helper.ManCargo_sale_time(Int32.Parse(mon.Text.ToString().Trim()), car_no.Text.Trim());
+                    rows = helper.ManCargo_sale_time(mon.SelectedIndex + 1, car_no.Text.Trim());
                     break;
                 case 1:
                     rows = helper.ManCargo_sale_cust();
@@ -53,14 +53,45 @@ namespace WpfApp1
                     rows = helper.ManCargo_sale_get();
                     break;
                 case 3:
+                    if (amount.Text.Trim().Length == 0) amount.Text = "0";
                     rows = helper.ManCargo_toadd(Int32.Parse(amount.Text.ToString().Trim()));
                     break;
                 default:
                     return;
+            }
+            
+            resetList(rows);
         }
         private void resetList(DataRow[] rows)
         {
+            if (rows.Count() > 0)
+            {
+                DataTable dt = rows[0].Table;
+                data.ItemsSource = dt.DefaultView;
+            }
+            else
+                data.ItemsSource = null;
+           
+        }
 
+        private void QuerySelectChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (query_0 != null)
+                query_0.Visibility = Visibility.Hidden;
+            if (query_1 != null)
+                query_1.Visibility = Visibility.Hidden;
+            switch (QuerySelectBox.SelectedIndex)
+            {
+                case 0:
+                    if (query_0 != null)
+                        query_0.Visibility = Visibility.Visible;
+                    break;
+                case 3:
+                    if (query_1 != null)
+
+                        query_1.Visibility = Visibility.Visible;
+                    break;
+            }
         }
     }
 

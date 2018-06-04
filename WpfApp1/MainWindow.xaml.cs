@@ -23,7 +23,10 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-            frame.Content = new Manager_cargo(frame);
+            //frame.Content = new Manage_Emp(frame);
+            //frame.Content = new Employee_Chargo(frame);
+            frame.Content = new index(frame);
+
         }
         private void goBack(object sender, RoutedEventArgs e)
         {
@@ -50,7 +53,7 @@ namespace WpfApp1
 
         private void home(object sender, RoutedEventArgs e)
         {
-            frame.RemoveBackEntry();
+            //frame.
             frame.Content = new index(frame);
         }
     }

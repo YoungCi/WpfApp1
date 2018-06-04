@@ -69,7 +69,7 @@ namespace DataGridDemo
             object sender, DataGridAutoGeneratingColumnEventArgs e)
         {
             Console.WriteLine(e.PropertyName);
-            if (e.PropertyName == "Check" || e.PropertyName =="工号")
+            if (e.PropertyName == "Check")
             {
                 e.Cancel = true;
             }
