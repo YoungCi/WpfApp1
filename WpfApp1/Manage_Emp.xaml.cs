@@ -78,6 +78,7 @@ namespace WpfApp1
             MyDialog dialog = new MyDialog(typeof(EmpObj),"添加员工信息");
             dialog.ShowDialog();
             ObservableCollection<EmpObj> newList = dialog.getObjectList();
+            List<String> errorList = new List<string>();
             foreach(var item in newList)
             {
                 int operatorCode = helper.ManEmp_add(item.工号.Trim(), item.姓名.Trim(), item.性别.ToString(), item.年龄.ToString(), item.基本工资.ToString(), md5helper.encrypt("123456"),0);
@@ -88,8 +89,12 @@ namespace WpfApp1
                 }
                 else
                 {
-                    MessageBox.Show("您增加的数据中包含不符合规则的值！");
+                    errorList.Add(item.工号 + " : " + Sql.ErrorCodeToString(operatorCode));
                 }
+            }
+            if (errorList.Count != 0)
+            {
+                MessageBox.Show(MainWindow.MakeErrorString(errorList), "添加员工出错");
             }
         }
         private void OnDataGridAutoGeneratingColumn(

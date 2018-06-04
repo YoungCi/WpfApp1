@@ -70,7 +70,10 @@ namespace WpfApp1
                     helper.ManOrder_alter(key, 8, item.订单号, 0);
                     key = item.订单号;
                 }
-                helper.ManOrder_alter(key, 1, item.销售日期, 0);
+                
+                int operatorCode=helper.ManOrder_alter(key, 1, item.销售日期, 0);
+                if (operatorCode != 0)
+                    MessageBox.Show(item.订单号 + " : " + Sql.ErrorCodeToString(operatorCode));
                 helper.ManOrder_alter(key, 2, item.货物编号, 0);
                 helper.ManOrder_alter(key, 3, item.客户编号, 0);
                 helper.ManOrder_alter(key, 4, item.员工编号, 0);
@@ -84,6 +87,7 @@ namespace WpfApp1
             MyDialog dialog = new MyDialog(typeof(OrderObj),"添加订单信息");
             dialog.ShowDialog();
             ObservableCollection<OrderObj> newList = dialog.getObjectList();
+            List<String> errorList = new List<string>();
             foreach (var item in newList)
             {
                 int operatorCode = helper.Order_add(item.订单号.Trim(), item.销售日期.ToString().Trim(),item.货物编号.Trim(),item.客户编号.Trim(),item.员工编号.Trim(),item.货物数量.ToString().Trim());
@@ -94,8 +98,12 @@ namespace WpfApp1
                 }
                 else
                 {
-                    MessageBox.Show("您增加的数据中包含不符合规则的值！");
+                    errorList.Add(item.订单号 + " : " + Sql.ErrorCodeToString(operatorCode));
                 }
+            }
+            if (errorList.Count != 0)
+            {
+                MessageBox.Show(MainWindow.MakeErrorString(errorList), "订单添加出错");
             }
         }
         private void resetList(DataRow[] rows)

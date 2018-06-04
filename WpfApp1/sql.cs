@@ -138,7 +138,7 @@ namespace WpfApp1
         {
             if (ty == 0)
                 edit = $"'{edit}'";
-            String[] na = new string[] { "emp_name", "sex", "age", "tot_amt", "bas_salary","passward","property","emp_no" };
+            String[] na = new string[] { "emp_name", "sex", "age", "tot_amt", "bas_salary", "passward", "property", "emp_no" };
             String alterSql = $"UPDATE employee SET {na[Ch - 1]} = {edit} WHERE emp_no = '{id}'";
             return ExecuteNonQuery(alterSql);
         }
@@ -146,17 +146,17 @@ namespace WpfApp1
         {
             if (ty == 0)
                 edit = $"'{edit}'";
-            String[] na = new string[] { "car_name", "pur_price", "sale_price", "tot_amt", "inventory","car_no" };
+            String[] na = new string[] { "car_name", "pur_price", "sale_price", "tot_amt", "inventory", "car_no" };
             String alterSql = $"UPDATE cargo SET {na[Ch - 1]} = {edit} WHERE car_no = '{id}'";
             ExecuteNonQuery(alterSql);
         }
-        public void ManOrder_alter(string id, int Ch, string edit, int ty)
+        public int ManOrder_alter(string id, int Ch, string edit, int ty)
         {
             if (ty == 0)
                 edit = $"'{edit}'";
             String[] na = new string[] { "sale_date", "car_no", "cus_no", "emp_no", "qty" };
             String alterSql = $"UPDATE sale_item SET {na[Ch - 1]} = {edit} WHERE sale_no = '{id}'";
-            ExecuteNonQuery(alterSql);
+            return ExecuteNonQuery(alterSql);
         }
 
         private DataRow[] ExecutQuery(string s)
@@ -220,6 +220,23 @@ namespace WpfApp1
                 operatorCode = 1;
             }
             return operatorCode;
+        }
+        public static String ErrorCodeToString(int operatorCode)
+        {
+            switch (operatorCode)
+            {
+                case 2:
+                    return "主码已存在";
+                case 3:
+                    return "主码不能为空";
+                case 4:
+                    return "输入中存在某些值不符合约束";
+                case 7:
+                    return "插入数据有非法值";
+                case 8:
+                    return "插入的数据中时间不合法";
+            }
+            return "Unexpect Error! ErrorCode = " + operatorCode;
         }
     }
 }

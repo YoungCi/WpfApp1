@@ -92,6 +92,7 @@ namespace WpfApp1
             MyDialog dialog = new MyDialog(typeof(CarObj),"添加货物信息");
             dialog.ShowDialog();
             ObservableCollection<CarObj> newList = dialog.getObjectList();
+            List<String> errorList = new List<string>();
             foreach (var item in newList)
             {
                 int operatorCode = helper.Cargo_add(item.货物号.Trim(), item.名称.Trim(), item.进价.ToString(), item.售价.ToString(), item.库存量.ToString());
@@ -100,6 +101,14 @@ namespace WpfApp1
                     resetList();
                     return;
                 }
+                else
+                {
+                    errorList.Add(item.货物号 + " : " + Sql.ErrorCodeToString(operatorCode));
+                }
+            }
+            if(errorList.Count!=0)
+            {
+                MessageBox.Show(MainWindow.MakeErrorString(errorList), "添加货物出错");
             }
         }
         private void EditAction(object sender, RoutedEventArgs e)

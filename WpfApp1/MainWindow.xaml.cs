@@ -23,7 +23,7 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-            frame.Content = new AddCustomer(frame);
+            frame.Content = new index(frame);
         }
         private void goBack(object sender, RoutedEventArgs e)
         {
@@ -51,6 +51,15 @@ namespace WpfApp1
         private void home(object sender, RoutedEventArgs e)
         {
             frame.Content = new index(frame);
+        }
+        public static String MakeErrorString(List<String> list)
+        {
+            StringBuilder builder = new StringBuilder();
+            foreach(var i in list)
+            {
+                builder.AppendLine(i);
+            }
+            return builder.ToString();
         }
     }
 }
