@@ -30,14 +30,9 @@ namespace WpfApp1
             InitializeComponent();
             this.frame = frame;
         }
-
         private void Emp_order(object sender, RoutedEventArgs e)
         {
-            public Employee(Frame frame)
-            {
-                InitializeComponent();
-                this.frame = frame;
-            }
-        }
+             frame.Content = new Emp_order(frame);
+    }
     }
 }

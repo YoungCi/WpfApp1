@@ -22,7 +22,7 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button ContentTemplate="{StaticResource pencil}" Click="EditAction"></Button>
+                                <Button ContentTemplate="{StaticResource pencil}" Click="editOrder"></Button>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -46,10 +46,10 @@
                     <ComboBoxItem Content="输入订单号查询:" ></ComboBoxItem>
                 </Label>
                 <TextBox Width="120" Name="find" Height="30" VerticalContentAlignment="Center" TextWrapping="NoWrap"></TextBox>
-                <Button Content="查询" Width="60" Click="find_emp"></Button>
+                <Button Content="查询" Width="60" Click="EmpOrder_find"></Button>
             </StackPanel>
             <DockPanel Grid.Column="1">
-                <Button Content="{StaticResource add}" Width="90" Click="AddEmp"></Button>
+                <Button Content="{StaticResource add}" Width="90" Click="add_order"></Button>
             </DockPanel>
         </Grid>
     </Grid>

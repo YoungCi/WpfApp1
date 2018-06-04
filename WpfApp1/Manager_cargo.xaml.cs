@@ -38,6 +38,7 @@ namespace WpfApp1
             }
 
         }
+
         private void ManCargo_find(object sender, RoutedEventArgs e)
         {
             DataRow[] rows = null;
@@ -57,10 +58,7 @@ namespace WpfApp1
                     break;
                 default:
                     return;
-        }
-        private void resetList(DataRow[] rows)
-        {
-
+            }
         }
     }
 }

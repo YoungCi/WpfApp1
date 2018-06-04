@@ -37,10 +37,10 @@
                 <Label  Content="请输入一个最低库存量：" Width="140" VerticalAlignment="Center"></Label>
                 <TextBox Name="amount" Width="50" VerticalAlignment="Center"></TextBox>
             </StackPanel>
-            <Button Grid.Column="2" Content="查询" Width="30" VerticalAlignment="Center" Click="find_cargo"></Button>
+            <Button Grid.Column="2" Content="查询" Width="30" VerticalAlignment="Center" Click="ManCargo_find"></Button>
         </Grid>
         <DataGrid Grid.Row="1" Name="data" IsReadOnly="True" 
-              Style="{StaticResource CommonDataGrid}" 
+             Style="{StaticResource CommonDataGrid}" 
              AutoGeneratingColumn="OnDataGridAutoGeneratingColumn">
         </DataGrid>
     </Grid>
