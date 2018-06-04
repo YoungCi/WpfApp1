@@ -62,7 +62,7 @@
                 <Button Content="条件查询" Width="60" Click="find_chargo"></Button>
             </StackPanel>
             <DockPanel Grid.Column="1">
-                <Button Content="添加货物" Width="90" Click="AddChargo"></Button>
+                <Button Content="{StaticResource add_cargo}" Width="90" Click="AddChargo"></Button>
             </DockPanel>
             <DockPanel Grid.Column="2">
                 <Button Content="删除选择货物" Click="Del_Selected" Margin="12 0 0 0" DockPanel.Dock="Left"  Style="{StaticResource HoverWarning}" Height="30"  Width="90"></Button>
