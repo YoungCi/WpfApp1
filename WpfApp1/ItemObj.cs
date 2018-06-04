@@ -87,4 +87,29 @@ namespace DataGridDemo
             库存量 = inventory;
         }
     }
+    public class OrderObj:ItemObj
+    {
+        private string sale_no;
+        private string sale_date;
+        private string car_no;
+        private string cus_no;
+        private string emp_no;
+        private int qty;
+        public string 订单号 { get => sale_no; set => sale_no = value; }
+        public string 销售日期 { get => sale_date; set => sale_date = value; }
+        public string 货物编号{ get =>  car_no; set =>  car_no = value; }
+        public string  客户编号{ get => cus_no; set => cus_no = value; }
+        public string 员工编号{ get =>  emp_no;set => emp_no= value; }
+        public int 货物数量 { get => qty; set => qty = value; }
+        public OrderObj() { }
+        public OrderObj(string order_no,string sale_date, string car_no, string cus_no, string emp_no, int qty)
+        {
+            订单号 = order_no;
+            销售日期 = sale_date;
+            货物编号 = car_no;
+            客户编号 = cus_no;
+            员工编号 = emp_no;
+            货物数量 = qty;
+        }
+    }
 }

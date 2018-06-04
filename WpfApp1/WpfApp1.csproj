@@ -56,6 +56,8 @@
     </ApplicationDefinition>
     <Compile Include="Employee_Chargo.xaml.cs">
       <DependentUpon>Employee_Chargo.xaml</DependentUpon>
+    <Compile Include="Emp_order.xaml.cs">
+      <DependentUpon>Emp_order.xaml</DependentUpon>
     </Compile>
     <Compile Include="Manager_cargo.xaml.cs">
       <DependentUpon>Manager_cargo.xaml</DependentUpon>
@@ -75,6 +77,9 @@
     <Page Include="Employee_Chargo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    <Page Include="Emp_order.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="index.xaml">
       <SubType>Designer</SubType>

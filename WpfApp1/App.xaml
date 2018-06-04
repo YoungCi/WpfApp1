@@ -44,6 +44,10 @@
         </Image>
         <Label Content="添加员工"></Label>
         </StackPanel>
+        <StackPanel x:Key="add" Orientation="Horizontal">
+            <Image Source="img/icons8-plus-80.png" Height="20" Width="20"></Image>
+            <Label Content="添加订单"></Label>
+        </StackPanel>
         <StackPanel x:Key="delete_emp" Orientation="Horizontal">
             <Image  Source="img/icons8-checkmark-64.png" Height="20" Width="20"></Image>
             <Label Content="选择员工"></Label>
@@ -61,3 +65,6 @@
         </Style>
     </Application.Resources>
 </Application>
+
+
+

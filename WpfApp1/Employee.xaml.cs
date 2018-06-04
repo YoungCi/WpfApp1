@@ -30,21 +30,18 @@ namespace WpfApp1
             InitializeComponent();
             this.frame = frame;
         }
-
         private void CargoAction(object sender, RoutedEventArgs e)
         {
             frame.Content = new Employee_Chargo(frame);
         }
 
-        private void SaleAction(object sender, RoutedEventArgs e)
-        {
-            //frame.Content = new Employee_sale(frame);
-
-        }
-
         private void AddCustomer(object sender, RoutedEventArgs e)
         {
 
+        }
+        private void Emp_order(object sender, RoutedEventArgs e)
+        {
+             frame.Content = new Emp_order(frame);
         }
     }
 }

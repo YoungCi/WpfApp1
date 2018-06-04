@@ -1,0 +1,56 @@
+﻿<Page x:Class="WpfApp1.Emp_order"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Emp_order">
+
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition ></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+        </Grid.RowDefinitions>
+        <DataGrid Grid.Row="0" Name="Order_DataGrid" IsReadOnly="True" 
+                  Style="{StaticResource CommonDataGrid}" 
+                  AutoGeneratingColumn="OnDataGridAutoGeneratingColumn">
+
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="操作">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button ContentTemplate="{StaticResource pencil}" Click="editOrder"></Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="390"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Width" Value="100"></Setter>
+                    <Setter Property="Height" Value="30"></Setter>
+                    <Setter Property="Margin" Value="10,10,10,10"></Setter>
+                </Style>
+            </Grid.Resources>
+            <StackPanel Grid.Column="0" Orientation="Horizontal">
+                <Label Name="QuerySelectBox" Width="150" Height="30" VerticalContentAlignment="Center" Margin="30,0,10,0" >
+                    <ComboBoxItem Content="输入订单号查询:" ></ComboBoxItem>
+                </Label>
+                <TextBox Width="120" Name="find" Height="30" VerticalContentAlignment="Center" TextWrapping="NoWrap"></TextBox>
+                <Button Content="查询" Width="60" Click="EmpOrder_find"></Button>
+            </StackPanel>
+            <DockPanel Grid.Column="1">
+                <Button Content="{StaticResource add}" Width="90" Click="add_order"></Button>
+            </DockPanel>
+        </Grid>
+    </Grid>
+</Page>
