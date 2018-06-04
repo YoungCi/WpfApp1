@@ -37,7 +37,7 @@ namespace WpfApp1
 
         private void AddCustomer(object sender, RoutedEventArgs e)
         {
-
+            frame.Content = new AddCustomer(frame);
         }
         private void Emp_order(object sender, RoutedEventArgs e)
         {

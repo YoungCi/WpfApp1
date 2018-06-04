@@ -113,4 +113,24 @@ namespace DataGridDemo
             货物数量 = qty;
         }
     }
+    public class CustObj : ItemObj
+    {
+        private string id;
+        private string name;
+        private string tel;
+        private string addr;
+        public string 客户号 { get => id; set => id = value; }
+        public string 姓名 { get => name; set => name = value; }
+        public string 电话 { get => tel; set => tel = value; }
+        public string 地址 { get => addr; set => addr = value; }
+      
+        public CustObj() { }
+        public CustObj(string id, string name, string tel, string addr)
+        {
+            客户号 = id;
+            姓名 = name;
+            电话 = tel;
+            地址 = addr;
+        }
+    }
 }

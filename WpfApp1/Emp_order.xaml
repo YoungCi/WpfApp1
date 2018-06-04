@@ -49,7 +49,7 @@
                 <Button Content="查询" Width="60" Click="EmpOrder_find"></Button>
             </StackPanel>
             <DockPanel Grid.Column="1">
-                <Button Content="{StaticResource add}" Width="90" Click="add_order"></Button>
+                <Button Content="{StaticResource add_sale}" Width="90" Click="add_order"></Button>
             </DockPanel>
         </Grid>
     </Grid>

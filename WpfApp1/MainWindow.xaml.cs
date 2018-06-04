@@ -23,7 +23,7 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-            frame.Content = new index(frame);
+            frame.Content = new AddCustomer(frame);
         }
         private void goBack(object sender, RoutedEventArgs e)
         {
