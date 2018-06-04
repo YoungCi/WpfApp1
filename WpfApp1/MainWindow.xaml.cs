@@ -50,7 +50,6 @@ namespace WpfApp1
 
         private void home(object sender, RoutedEventArgs e)
         {
-            //frame.
             frame.Content = new index(frame);
         }
     }
