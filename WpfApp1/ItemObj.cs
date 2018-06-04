@@ -87,6 +87,7 @@ namespace DataGridDemo
             库存量 = inventory;
         }
     }
+    [Serializable]
     public class OrderObj:ItemObj
     {
         private string sale_no;
