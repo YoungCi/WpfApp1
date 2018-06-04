@@ -24,7 +24,7 @@ namespace WpfApp1
             String UserName = "MuYi41";//登录用户名
             String PassWord = "970814";//登录密码
             //写入连接所使用的字符串信息
-            connection.ConnectionString = String.Format("server = {0}\\{1}; database = {2}; uid = {3}; pwd = {4}", SqlIP, InstanceName, DateBaseName, UserName, PassWord);
+            connection.ConnectionString = String.Format("server = {0}; database = {2}; uid = {3}; pwd = {4}", SqlIP, InstanceName, DateBaseName, UserName, PassWord);
             //Console.WriteLine(connection.ConnectionString);
         }
 
@@ -124,7 +124,7 @@ namespace WpfApp1
         }
         public DataRow[] ManOrder_get(int mon)
         {
-            string queryOrderGet = $"select month(sale_date) 月份,sum(qty * (sale_price - pur_price)) 盈利 from sale_item,cargo where cargo.car_no = sale_item.car_no and month(sale_date) = 3 group by month(sale_date)";
+            string queryOrderGet = $"select month(sale_date) 月份,sum(qty * (sale_price - pur_price)) 盈利 from sale_item,cargo where cargo.car_no = sale_item.car_no and month(sale_date) = {mon} group by month(sale_date)";
             return ExecutQuery(queryOrderGet);
         }
         public DataRow[] ManOrder_empsal(string emp_id, int mon, float dedu)
@@ -146,7 +146,7 @@ namespace WpfApp1
         {
             if (ty == 0)
                 edit = $"'{edit}'";
-            String[] na = new string[] { "car_name", "pur_price", "sale_price", "tot_amt", "inventory" };
+            String[] na = new string[] { "car_name", "pur_price", "sale_price", "tot_amt", "inventory","car_no" };
             String alterSql = $"UPDATE cargo SET {na[Ch - 1]} = {edit} WHERE car_no = '{id}'";
             ExecuteNonQuery(alterSql);
         }

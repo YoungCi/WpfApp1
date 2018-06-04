@@ -50,7 +50,7 @@ namespace WpfApp1
 
         private void home(object sender, RoutedEventArgs e)
         {
-            frame.RemoveBackEntry();
+            //frame.
             frame.Content = new index(frame);
         }
     }

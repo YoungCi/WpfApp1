@@ -8,18 +8,11 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Manager">
 
-    <Grid Background="White">
-        <Grid.Resources>
-            <Style TargetType="Button" x:Key="man_style">
-                <Setter Property="FontSize" Value="25"></Setter>
-                <Setter Property="HorizontalAlignment" Value="Center"></Setter>
-                <Setter Property="Width" Value="240"></Setter>
-                <Setter Property="Height" Value="50"></Setter>
-            </Style>
-        </Grid.Resources>
-        <Label Content="部门主管界面" HorizontalAlignment="Center"  VerticalAlignment="Top" FontSize="36" Margin="271,49,267,0"/>
-        <Button Content="管理员工信息" Click="ManEmp" Style="{StaticResource man_style}" Margin="0,160,0,0"  VerticalAlignment="Top" />
-        <Button Content="管理货物信息" Click="Manager_cargo" Style="{StaticResource man_style}" Margin="0,230,0,0" VerticalAlignment="Top" />
-        <Button Content="管理销售信息" Style="{StaticResource man_style}" Margin="0,300,0,0" VerticalAlignment="Top"/>
-    </Grid>
+    <StackPanel Background="White">
+      
+        <Label Content="部门主管界面" HorizontalAlignment="Center"  FontSize="36" Margin="0,80,0,0"/>
+        <Button Content="员工信息管理" Click="ManEmp" Style="{StaticResource user_button}"  />
+        <Button Content="货物信息管理" Click="ManCrago"   Style="{StaticResource user_button}"  />
+        <Button Content="销售信息管理" Click="ManSale" Style="{StaticResource user_button}" />
+    </StackPanel>
 </Page>

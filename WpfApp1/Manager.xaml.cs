@@ -40,5 +40,10 @@ namespace WpfApp1
         {
             frame.Content = new Manager_cargo(frame);
         }
+
+        private void ManSale(object sender, RoutedEventArgs e)
+        {
+            frame.Content = new Manage_sale(frame);
+        }
     }
 }
