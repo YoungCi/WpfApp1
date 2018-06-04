@@ -10,7 +10,7 @@
     <StackPanel Background="White">
         <Label Content="部门职员界面" HorizontalAlignment="Center" Margin="0,80,0,0" FontSize="36" />
         <Button Content="货物信息管理" Click="CargoAction" Style="{StaticResource user_button}"/>
-        <Button Content="订单信息管理" Click="SaleAction" Style="{StaticResource user_button}"/>
+        <Button Content="订单信息管理" Click="Emp_order" Style="{StaticResource user_button}"/>
         <Button Content="添加客户" Click="AddCustomer" Style="{StaticResource user_button}"/>
     </StackPanel>
 </Page>
