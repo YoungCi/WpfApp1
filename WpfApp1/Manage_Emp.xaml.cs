@@ -40,6 +40,7 @@ namespace WpfApp1
             Console.WriteLine(list[index]);
             MyDialog dialog = new MyDialog(list[index],false,"修改员工信息");
             dialog.ShowDialog();
+            if (dialog.DialogResult == false) return;
             Console.WriteLine(dialog.DialogResult);
             if(dialog.DialogResult==true)
             {
@@ -77,6 +78,7 @@ namespace WpfApp1
         {
             MyDialog dialog = new MyDialog(typeof(EmpObj),"添加员工信息");
             dialog.ShowDialog();
+            if (dialog.DialogResult == false) return;
             ObservableCollection<EmpObj> newList = dialog.getObjectList();
             List<String> errorList = new List<string>();
             foreach(var item in newList)

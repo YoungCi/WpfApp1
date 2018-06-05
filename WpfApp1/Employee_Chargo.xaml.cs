@@ -91,6 +91,8 @@ namespace WpfApp1
         {
             MyDialog dialog = new MyDialog(typeof(CarObj),"添加货物信息");
             dialog.ShowDialog();
+            if (dialog.DialogResult == false) return;
+
             ObservableCollection<CarObj> newList = dialog.getObjectList();
             List<String> errorList = new List<string>();
             foreach (var item in newList)
@@ -117,9 +119,8 @@ namespace WpfApp1
             Console.WriteLine(list[index]);
             MyDialog dialog = new MyDialog(list[index], false,"修改货物信息");
             dialog.ShowDialog();
-            Console.WriteLine(dialog.DialogResult);
-            if (dialog.DialogResult == true)
-            {
+            if (dialog.DialogResult == false) return;
+            
                 //list[index] = dialog.getObjResult() as EmpObj;
                 var item = dialog.getObjResult() as CarObj;
                 var key = list[index].货物号;
@@ -133,7 +134,7 @@ namespace WpfApp1
                 helper.Cargo_alter(key, 3, item.售价.ToString(), 1);
                 helper.Cargo_alter(key, 5, item.库存量.ToString(), 1);
                 resetList();
-            }
+            
         }
     }
 }
