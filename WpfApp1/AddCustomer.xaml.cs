@@ -30,6 +30,8 @@ namespace WpfApp1
         {
             InitializeComponent();
             this.frame = frame;
+            Customer_DataGrid.ItemsSource = list;
+            resetList();
         }
         private void OnDataGridAutoGeneratingColumn(
            object sender, DataGridAutoGeneratingColumnEventArgs e)
@@ -46,6 +48,7 @@ namespace WpfApp1
             MyDialog dialog = new MyDialog(typeof(CustObj), "添加客户");
             dialog.ShowDialog();
             ObservableCollection<CustObj> newList = dialog.getObjectList();
+            List<String> errorList = new List<string>();
             foreach (var item in newList)
             {
                 int operatorCode = helper.Cust_add(item.客户号.Trim(), item.姓名.Trim(), item.电话.Trim(), item.地址.Trim());
@@ -54,6 +57,14 @@ namespace WpfApp1
                     resetList();
                     return;
                 }
+                else
+                {
+                    errorList.Add(item.客户号 + " : " + Sql.ErrorCodeToString(operatorCode));
+                }
+            }
+            if (errorList.Count != 0)
+            {
+                MessageBox.Show(MainWindow.MakeErrorString(errorList), "添加客户出错");
             }
         }
         private void resetList(DataRow[] rows)
