@@ -60,9 +60,8 @@ namespace WpfApp1
             Console.WriteLine(list[index]);
             MyDialog dialog = new MyDialog(list[index], false,"修改订单信息");
             dialog.ShowDialog();
-            Console.WriteLine(dialog.DialogResult);
-            if (dialog.DialogResult == true)
-            {
+            if (dialog.DialogResult == false) return;
+            
                 var item = dialog.getObjResult() as OrderObj;
                 var key = list[index].订单号;
                 if (item.订单号 != key)
@@ -79,13 +78,15 @@ namespace WpfApp1
                 helper.ManOrder_alter(key, 4, item.员工编号, 0);
                 helper.ManOrder_alter(key, 5, item.货物数量.ToString().Trim(), 1);
                 resetList();
-            }
+            
         }
 
         private void add_order(object sender, RoutedEventArgs e)
         {
             MyDialog dialog = new MyDialog(typeof(OrderObj),"添加订单信息");
             dialog.ShowDialog();
+            if (dialog.DialogResult == false) return;
+
             ObservableCollection<OrderObj> newList = dialog.getObjectList();
             List<String> errorList = new List<string>();
             foreach (var item in newList)

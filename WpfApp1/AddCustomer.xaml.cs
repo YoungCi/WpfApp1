@@ -47,6 +47,8 @@ namespace WpfApp1
         {
             MyDialog dialog = new MyDialog(typeof(CustObj), "添加客户");
             dialog.ShowDialog();
+            if (dialog.DialogResult == false) return;
+
             ObservableCollection<CustObj> newList = dialog.getObjectList();
             List<String> errorList = new List<string>();
             foreach (var item in newList)
